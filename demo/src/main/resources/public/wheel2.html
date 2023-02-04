@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+    <style>
+        body{
+  background: #2f4f4f;
+}
+h1{
+  font-size: 54px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-family: 'Odibee Sans', cursive;
+  margin-bottom: 0;
+}
+
+#css {
+  color: yellow;
+  font-family: 'Odibee Sans', cursive;
+}
+
+.carousel-wrapper {
+  height: 400px;
+  position: relative;
+  width: 800px;
+  display: block;
+  margin: 50px auto ;
+  border: 2px solid black;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.arrow{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^= "item"] {
+  display: none;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('img1.jpg');
+  background-size: cover;
+}
+.item-2 {
+  background: url('img2.jpg');
+  background-size: cover;
+}
+.item-3 {
+  background: url('img3.jpg');
+  background-size: cover;
+}
+
+*:target ~ .item-1{
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+
+}
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+} 
+    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Pure <span id="css">Css</span> Carousel</h1>
+  <div class="carousel-wrapper">
+    <span id="item-1"></span>
+    <span id="item-2"></span>
+    <span id="item-3"></span>
+    <div class="carousel-item item-1">
+      <a href="#item-3" class="arrow-prev arrow"></a>
+      <a href="#item-2" class="arrow-next arrow"></a>
+    </div>
+
+    <div class="carousel-item item-2">
+      <a href="#item-1" class="arrow-prev arrow"></a>
+      <a href="#item-3" class="arrow-next arrow"></a>
+    </div>
+
+    <div class="carousel-item item-3">
+      <a href="#item-2" class="arrow-prev arrow"></a>
+      <a href="#item-1" class="arrow-next arrow"></a>
+    </div>
+
+  </div>
+</body>
+</html>
