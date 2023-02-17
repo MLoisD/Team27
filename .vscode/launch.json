@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch InventorybApplication",
+            "request": "launch",
+            "mainClass": "com.t27.inventoryapp.InventorybApplication",
+            "projectName": "inventoryb"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-InventorybApplication<inventoryb>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

@@ -10,14 +10,11 @@ public class User {
     @Id
     @GeneratedValue
     private int userID;
-    private String username;
-    private String userPass;
-    private String userEmail;
-    private String userType;
-
-    public User() {
-    }
-
+    private String u_name;
+    private String u_pass;
+    private String u_email;
+    private String u_type;
+    
     public int getUID() {
         return userID;
     }
@@ -27,35 +24,35 @@ public class User {
     }
 
     public String getUName() {
-        return username;
+        return u_name;
     }
 
-    public void setUName(String username) {
-        this.username = username;
+    public void setUName(String u_name) {
+        this.u_name = u_name;
     }
 
     public String getUEmail() {
-        return userEmail;
+        return u_email;
     }
 
-    public void setUEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setUEmail(String u_email) {
+        this.u_email = u_email;
     }
 
     public String getPassword() {
-        return userPass;
+        return u_pass;
     }
 
-    public void setPassword(String userPass) {
-        this.userPass = userPass;
+    public void setPassword(String u_pass) {
+        this.u_pass = u_pass;
     }
 
     public String getUserType() {
-        return userType;
+        return u_type;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setUserType(String u_type) {
+        this.u_type = u_type;
     }
 
 }

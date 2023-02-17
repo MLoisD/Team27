@@ -1,4 +1,4 @@
-package com.t27.inventoryb;
+package com.t27.inventoryapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
