@@ -1,8 +1,8 @@
 package com.t27.inventoryapp.model;
 
-import java.lang.persistence.Id;
-import javax.annotation.processing.Generated;
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
 public class User {
@@ -13,7 +13,7 @@ public class User {
     private String username;
     private String userPass;
     private String userEmail;
-    private String UserType;
+    private String userType;
 
     public User() {
     }
@@ -49,4 +49,13 @@ public class User {
     public void setPassword(String userPass) {
         this.userPass = userPass;
     }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
 }
