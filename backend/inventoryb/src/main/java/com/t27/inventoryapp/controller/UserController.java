@@ -3,6 +3,7 @@ package com.t27.inventoryapp.controller;
 import com.t27.inventoryapp.service.UserService;
 import com.t27.inventoryapp.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,5 +20,4 @@ public class UserController{
         userService.saveUser(user);
         return "New User Added";
     }
-    
 }
