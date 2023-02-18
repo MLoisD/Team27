@@ -18,33 +18,38 @@ public class CustomerController{
     @Autowired
     private CustomerRepository customerRepo;
 
-    @GetMapping(value = "/")
+    /* @GetMapping(value = "/")
     public String pageStart(){
         return "Hello There";
-    }
-
+    }*/
+    
+    //Gets a list of all customers
     @GetMapping(value = "/customerList")
     public List<Customer> getCustomers(){
         return customerRepo.findAll();
     }
 
-    @GetMapping(value = "/customerList/{userid}")
-    public Customer getCustomer(@PathVariable Long userID){
+
+    //only shows specified customer
+    @GetMapping(value = "/customerList/{userID}")
+    public Customer getCustomer(@PathVariable("userID") Long userID){
         Customer foundThem = customerRepo.findById(userID).get();
         return foundThem;
 
     }
 
+    //adds customer
     @PostMapping(value = "/addCustomer")
     public String addCustomers(@RequestBody Customer customer){
         customerRepo.save(customer);
         return "Customer Added";
     }
 
-    @PutMapping(value = "/updateCustomer/{userid}")
+
+    //updates specific user
+    @PutMapping(value = "/updateCustomer/{userID}")
     public String updateCustomer(@PathVariable Long userID, @RequestBody Customer customer){
         Customer updatedC = customerRepo.findById(userID).get();
-        updatedC.setUID(customer.getUID());
         updatedC.setUEmail(customer.getUEmail());
         updatedC.setUserType(customer.getUserType());
         updatedC.setUName(customer.getUName());
@@ -53,7 +58,8 @@ public class CustomerController{
         return "Customer Updated";
     }
 
-    @DeleteMapping(value =  "/deleteCustomer/{userid}")
+    //deletes specified user
+    @DeleteMapping(value =  "/deleteCustomer/{userID}")
     public String deleteCustomer(@PathVariable Long userID){
         Customer deletedC = customerRepo.findById(userID).get();
         customerRepo.delete(deletedC);
