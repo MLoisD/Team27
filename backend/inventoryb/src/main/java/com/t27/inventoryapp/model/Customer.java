@@ -1,28 +1,36 @@
 package com.t27.inventoryapp.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "customer")
-public class User {
+public class Customer {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.TABLE)
-    private int userID;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long userID;
+
+    @Column
     private String u_name;
+
+    @Column
     private String u_pass;
+
+    @Column
     private String u_email;
+
+    @Column
     private String u_type;
+
     
-    public int getUID() {
+    public Long getUID() {
         return userID;
     }
 
-    public void setUID(int userID) {
+    public void setUID(Long userID) {
         this.userID = userID;
     }
 
