@@ -33,10 +33,13 @@ public class Book {
     private String Cover;
     
     @Column
-    private int Price;
+    private float Price;
 
     @Column
     private String Description;
+
+    @Column
+    private int stockNum;
 
  
     public Long getBookID() {
@@ -101,11 +104,11 @@ public class Book {
     }
 
 
-    public int getPrice() {
+    public float getPrice() {
         return Price;
     }
 
-    public void setPrice(int Price) {
+    public void setPrice(float Price) {
         this.Price = Price;
     }
 
@@ -116,6 +119,15 @@ public class Book {
 
     public void setDescription(String Description) {
         this.Description = Description;
+    }
+
+    public int getStockNum() {
+        return stockNum;
+    }
+
+ 
+    public void setStockNum(int stockNum) {
+        this.stockNum = stockNum;
     }
 
 }

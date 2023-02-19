@@ -38,7 +38,7 @@ export default function Home() {
                         {
                             customer.map((customer, index) => (
                                 <tr>
-                                    <th scope="row" key={index}>{index +1}</th>
+                                    <th scope="row" key={index}>{index + 1}</th>
                                     <td>{customer.uname}</td>
                                     <td>{customer.uemail}</td>
                                     <td>{customer.userType}</td>
@@ -53,30 +53,37 @@ export default function Home() {
                     </tbody>
                 </table>
             </div>
-            <div className = "yp">
-            <table className="table">
+            <div className='py'>
+                <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">username</th>
-                            <th scope="col">email</th>
-                            <th scope="col">type</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">index</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">Age Rating</th>
+                            <th scope="col">Cover Type</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Stock size</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            customer.map((customer, index) => (
+                            book.map((book, index) => (
                                 <tr>
-                                    <th scope="row" key={index}>{index +1}</th>
-                                    <td>{customer.uname}</td>
-                                    <td>{customer.uemail}</td>
-                                    <td>{customer.userType}</td>
-                                    <td>
-                                        <button className="btn btn-outline-danger mx-2">View Order</button>
-                                        <button className="btn btn-primary mx-2">Edit User</button>
-                                        <button className="btn btn-danger mx-2">Delete User</button>
-                                    </td>
+                                    <th scope="row" key={index}>{index + 1}</th>
+                                    <td>{book.bname}</td>
+                                    <td>{book.author}</td>
+                                    <td>{book.datepub}</td>
+                                    <td>{book.genre}</td>
+                                    <td>{book.ageRate}</td>
+                                    <td>{book.cover}</td>
+                                    <td>{book.description}</td>
+                                    <td>{book.price}</td>
+                                    <td>{book.stockNum}</td>
+                                    
                                 </tr>
                             ))}
 
