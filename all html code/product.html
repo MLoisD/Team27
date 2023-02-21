@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.jpg') }}">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+    <!-- Fonts -->
+     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    body {
+        background-image: linear-gradient(43deg, #CCFCCB 0%, #F1FFFA 46%, #F5F5F5 100%) ;
+    }
+    .small-img-group{
+        display: flex;
+        justify-content: space-between;   
+    }
+
+    .small-img-col{
+        flex-basis: 33%;
+        cursor: pointer;
+    }
+    .product select{
+        display: block;
+        padding: 5px 10px;
+        margin: 30px 0px;
+        
+    }
+    .product input{
+        width: 50px;
+        height: 40px;
+        padding-left: 10px;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    .product input:focus {
+        outline: none;
+    }
+    .buy-btn{
+        display: inline-block;
+        background: #464e47;
+        color: #fff;
+        padding: 8px 30px;
+        border-radius: 30px;
+        margin: 30px 0px;
+        
+    }
+
+</style>
+
+<body>
+    
+
+<section class="container product my-5 pt-5">
+    <div class="row mt-5">
+        <div class="col-lg-5 col-md-12 col-12">
+            <img class="img-fluid w-100 h-50 pb-1" src="img/img.1.jpg" id="MainImg"alt="">
+
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="img/img.1.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="img/img.2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="img/img.1.jpg" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <h6>Home / Books</h6>
+            <h3 class="py-4">Nutuk Söylev</h3>
+            <h2>$20.00</h2>
+            <select class="my-3">
+                <option>Select Quantity</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+            <button class="buy-btn">Add To Cart</button>
+            <h4 class="mt-5 mb-4">Product Info</h4>
+            <Span>"Nutuk Söylev" is a book containing the full text of the famous speech given by Mustafa Kemal Atatürk, the founder of the Turkish Republic, in 1927. The speech was delivered over several days and covers the history of the Turkish War of Independence, the founding of the Republic, and the political, social, and economic reforms that were implemented during the early years of the Republic.</Span>
+        </div>
+    </div>
+</section>
+
+
+  <script>
+    var MainImg = document.getElementById('MainImg');
+    var smallimg = document.getElementsByClassName('small-img')
+
+   smallimg[0].onclick = function(){
+      MainImg.src = smallimg[0].src;
+   }
+   smallimg[1].onclick = function(){
+      MainImg.src = smallimg[1].src;
+   }
+   smallimg[2].onclick = function(){
+      MainImg.src = smallimg[2].src;
+   }
+  </script>
+
+</body>
+
+
+
