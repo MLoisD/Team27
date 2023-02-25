@@ -1,6 +1,7 @@
 package com.t27.inventoryapp.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+import com.t27.inventoryapp.exception.BookNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,18 +36,21 @@ public class BookController {
 
     // updates specific book
     @PutMapping(value = "/updateBook/{bookID}")
-    public String updateCustomer(@PathVariable Long bookID, @RequestBody Book book) {
-        Book updatedB = bookRepo.findById(bookID).get();
-        updatedB.setBName(book.getBName());
-        updatedB.setAuthor(book.getAuthor());
-        updatedB.setDatepub(book.getDatepub());
-        updatedB.setGenre(book.getGenre());
-        updatedB.setAgeRate(book.getAgeRate());
-        updatedB.setCover(book.getCover());
-        updatedB.setPrice(book.getPrice());
-        updatedB.setDescription(book.getDescription());
-        bookRepo.save(updatedB);
-        return "Book Updated";
+    public Book updateCustomer(@PathVariable Long bookID, @RequestBody Book newBook) {
+        return bookRepo.findById(bookID).map(
+        book ->{
+        book.setBName(newBook.getBName());
+        book.setAuthor(newBook.getAuthor());
+        book.setDatepub(newBook.getDatepub());
+        book.setGenre(newBook.getGenre());
+        book.setAgeRate(newBook.getAgeRate());
+        book.setCover(newBook.getCover());
+        book.setPrice(newBook.getPrice());
+        book.setDescription(newBook.getDescription());
+        return bookRepo.save(book);
+    }).orElseThrow(()-> new BookNotFoundException(bookID));
+        
+        
     }
 
     // updates specific book stock level
@@ -61,9 +65,17 @@ public class BookController {
     // deletes specified book
     @DeleteMapping(value = "/deleteBook/{bookID}")
     public String deleteBook(@PathVariable Long bookID) {
+        if(!bookRepo.existsById(bookID)){
+            throw new BookNotFoundException(bookID);
+        }
         Book deletedB = bookRepo.findById(bookID).get();
         bookRepo.delete(deletedB);
         return "Deleted Book, Book ID was: " + bookID;
     }
 
+    @GetMapping(value = "/bookList/{bookID}")
+    public Book getBookByID(@PathVariable Long bookID) {
+        return bookRepo.findById(bookID).orElseThrow(
+                () -> new BookNotFoundException(bookID));
+    }
 }
