@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function EditBook() {
 
-    let navigate=useNavigate();
+    let navigate = useNavigate();
+
+    const { bookID } = useParams()
 
     const [book, setBook] = useState({
         bname: "",
@@ -23,12 +25,20 @@ export default function EditBook() {
         setBook({ ...book, [e.target.name]: e.target.value })
     };
 
-    const onSubmit =async (e) => {
+    useEffect(()=>{
+        loadBooks();
+    },[]);
+
+    const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/addBook", book)
+        await axios.put(`http://localhost:8080/updateBook/${bookID}`, book)
         navigate("/")
     };
 
+    const loadBooks = async () => { 
+        const result = await axios.get(`http://localhost:8080/bookList/${bookID}`)
+        setBook(result.data)
+    }
     return (
         <div className='container'>
             <div className='row'>
