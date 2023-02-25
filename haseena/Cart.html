@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Basket</title>
 <style>
 
@@ -356,7 +357,7 @@ span.price {
 <div class="navbar">
     <a href="#" class="split">Back to shopping</a>
     <div class="title">
-    <h2> Bookworms </h2>
+    <h2><b>Bookworms</b></h2>
     </div>
     <a href="#"><i class="fa-light fa-cart-shopping"></i> Cart </a>
     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -397,7 +398,16 @@ span.price {
         <p>Usually dispatched 3-5 days.</p>
       </div>
       <div class="column quantity" style="background-color:#ffffff;">
-        <p>Check Box</p>
+        <label for="quantity">Quantity:</label>
+          <select name="quantity" id="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          </select>
       </div>
       <div class="column right" style="background-color:#ffffff;">
         <p>Total Price</p>
@@ -427,7 +437,7 @@ span.price {
               </div>
 
               <div class="leftcolumn">
-                <a href="Payment.html" class="button">Checkout</a>
+                <a href="Payment.html" class="button">Checkout</a><br><br><br>
               </div>
 
               <div class="rightcolumn">
@@ -439,12 +449,34 @@ span.price {
                 <p>Standard shipping: £2.99</p>
                 <p>International: £5.99</p>
                 </div>
-                
               </div>
-              
             </div>
-        
           </div>
+
+          <div class="row">
+            <div class="leftcolumn">
+              <div class="w3-container">
+                <h3><u>Previous orders</u></h3>
+              
+                <table class="w3-table-all w3-card-4">
+                  <tr>
+                    <th>Book</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td><img src="/images/img1.jpg" alt="Metamorphis" width="100" height="110"></td>
+                    <td>Kafka On The Shore</td>
+                    <td>Murakami</td>
+                    <td>1</td>
+                    <td>£12.99</td>
+                  </tr>
+                </table><br><br>
+              </div>
+            </div>
+           </div>
 
           
 <script>
