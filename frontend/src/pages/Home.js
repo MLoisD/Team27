@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 
@@ -83,7 +84,11 @@ export default function Home() {
                                     <td>{book.description}</td>
                                     <td>{book.price}</td>
                                     <td>{book.stockNum}</td>
-                                    
+                                    <td>
+                                        <Link className="btn btn-outline-danger mx-2"
+                                        to={`/editBook/${book.bookID}`}
+                                        >Edit Book</Link>
+                                    </td>
                                 </tr>
                             ))}
 
