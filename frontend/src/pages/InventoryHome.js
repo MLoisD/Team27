@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function Home() {
+export default function InventoryHome() {
 
     const [customer, setCustomers] = useState([])
-    const [book, setBooks] = useState([])
+    const [book, setBooks] = useState([]);
+
+    //const {bookID}= useParams()
 
     useEffect(() => {
         loadCustomers();
@@ -20,6 +22,11 @@ export default function Home() {
     const loadBooks = async () => {
         const result = await axios.get("http://localhost:8080/bookList")
         setBooks(result.data)
+    }
+
+    const deleteBooks = async (bookID) => {
+        await axios.delete(`http://localhost:8080/bookList/${bookID}`)
+        loadBooks()
     }
 
     return (
@@ -88,6 +95,9 @@ export default function Home() {
                                         <Link className="btn btn-outline-danger mx-2"
                                         to={`/editBook/${book.bookID}`}
                                         >Edit Book</Link>
+                                        <Link className="btn btn-danger mx-2"
+                                        onClick={() => deleteBooks(book.bookID)}
+                                        >Delete Book</Link>
                                     </td>
                                 </tr>
                             ))}
