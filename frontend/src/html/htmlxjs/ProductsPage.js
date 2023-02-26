@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function InventoryHome() {
+export default function ProductsPage() {
 
     const [book, setBooks] = useState([]);
 
     //const {bookID}= useParams()
 
     useEffect(() => {
-        loadCustomers();
         loadBooks();
     }, []);
 
@@ -19,35 +18,24 @@ export default function InventoryHome() {
     }
 
     return (
-        <div className='container'>
-            <div className='py'>
-                    <tbody>
-                        {
-                            book.map((book, index) => (
-                                <tr>
-                                    <th scope="row" key={index}>{index + 1}</th>
-                                    <td>{book.bname}</td>
-                                    <td>{book.author}</td>
-                                    <td>{book.datepub}</td>
-                                    <td>{book.genre}</td>
-                                    <td>{book.ageRate}</td>
-                                    <td>{book.cover}</td>
-                                    <td>{book.description}</td>
-                                    <td>{book.price}</td>
-                                    <td>{book.stockNum}</td>
-                                    <td>
-                                        <Link className="btn btn-outline-danger mx-2"
-                                        to={`/editBook/${book.bookID}`}
-                                        >Edit Book</Link>
-                                        <Link className="btn btn-danger mx-2"
-                                        onClick={() => deleteBooks(book.bookID)}
-                                        >Delete Book</Link>
-                                    </td>
-                                </tr>
-                            ))}
+        <section class="product_list">
 
-                    </tbody>
-            </div>
+            <div class="product_container">
+                   { book.map((book, index) =>(
+                        <div class="card">
+                            <div class="image"><img src="images\sample book 1.jpg"></img></div>
+                            <div class="title"><td>{book.bname}</td></div>
+                            <div class="price">
+                                <h4>£9.99</h4>
+                            </div>
+                            <div class="author_name">
+                                <p><td>{book.author}</td></p>
+                            </div>
+                            <div><a href="men_details.html"><button class="addTocart"><i class="fa fa-shopping-cart"></i> Add to
+                                cart</button></a></div>
+                        </div>
+                    ))}
         </div>
+        </section>
     )
 }
