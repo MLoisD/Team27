@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     return (
-        <div>
+<div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">User CRUD</a>
@@ -11,7 +11,7 @@ export default function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <Link className='btn btn-outline-light' to="/addBook">Add Book</Link>
+                    <button className='btn btn-outline-light'>Add User</button>
                 </div>
             </nav>
         </div>

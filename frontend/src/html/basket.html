@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styling.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Chakra Petch' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">My Website</div>
+        <div>
+            <a href="signupform.html">login/sign-up</a></li>
+            <a href="products.html">Store Page</a></li>
+            <a href="about.html">About Us</a></li>
+            <a href="contact-us.html">Contact us</a></li>
+            <a href="#services">Reviews</a></li>
+            <a href="#contact">extra</a></li>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <a href="Payment.html" class="btn" id="next"> next</a>
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circle active">Cart</div>
+            <div class="circle">Payment</div>
+            <div class="circle">Review</div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <div class="column left" style="background-color:#ffffff;">
+                    <p><img src="/images/img2.jpg" class="responsive-image" alt="Metamorphis" width="150" height="150">
+                    </p>
+                </div>
+                <div class="column middle" style="background-color:#ffffff;">
+                    <p>Metamorphis</p>
+                    <p><b> Franz Kafka</b></p>
+                    <p>Price: </p>
+                    <p>Usually dispatched 3-5 days.</p>
+                </div>
+                <div class="column quantity" style="background-color:#ffffff;">
+                    <label for="quantity">Quantity:</label>
+                    <select name="quantity" id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+                <div class="column right" style="background-color:#ffffff;">
+                    <p>Total Price</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="rightcolumn">
+        <div class="card">
+            <h2>Cart</h2>
+            <span class="price" style="color:black">
+                <i class="fa fa-shopping-cart"></i>
+                <b>4</b>
+            </span>
+            </h4>
+            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+            <hr>
+            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+        </div>
+    </div>
+
+    <div class="leftcolumn">
+        <a href="Payment.html" class="button">Checkout</a><br><br><br>
+    </div>
+
+    <div class="rightcolumn">
+        <div class="card">
+            <h3>Shipping</h3>
+            <button type="button" class="collapsible">Shipping fee</button>
+            <div class="content">
+                <p>1st class: £4.99.</p>
+                <p>Standard shipping: £2.99</p>
+                <p>International: £5.99</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="w3-container">
+                <h3><u>Previous orders</u></h3>
+
+                <table class="w3-table-all w3-card-4">
+                    <tr>
+                        <th>Book</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/img1.jpg" alt="Metamorphis" width="100" height="110"></td>
+                        <td>Kafka On The Shore</td>
+                        <td>Murakami</td>
+                        <td>1</td>
+                        <td>£12.99</td>
+                    </tr>
+                </table><br><br>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const progress = document.getElementById("progress");
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
+        const circles = document.querySelectorAll(".circle");
+        let currentActive = 1;
+
+        next.addEventListener("click", () => {
+            currentActive++;
+            if (currentActive > circles.length) currentActive = circles.length;
+            update();
+        });
+
+        prev.addEventListener("click", () => {
+            currentActive--;
+            if (currentActive < 1) currentActive = 1;
+            update();
+        });
+
+        const update = () => {
+            circles.forEach((circle, index) => {
+                if (index < currentActive) circle.classList.add("active");
+                else circle.classList.remove("active");
+            });
+            const actives = document.querySelectorAll(".active");
+            progress.style.width =
+                ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
+            if (currentActive === 1) prev.disabled = true;
+            else if (currentActive === circles.length) next.disabled = true;
+            else {
+                prev.disabled = false;
+                next.disabled = false;
+            }
+        };
+    </script>
+
+
+
+
+</body>
+
+</html>
