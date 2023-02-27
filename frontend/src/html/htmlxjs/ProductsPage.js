@@ -31,7 +31,7 @@ export default function ProductsPage() {
                             <div class="author_name">
                                 <p><td>{book.author}</td></p>
                             </div>
-                            <div><a href="men_details.html"><button class="addTocart"><i class="fa fa-shopping-cart"></i> Add to
+                            <div><a href="individual.html"><button class="addTocart"><i class="fa fa-shopping-cart"></i> Add to
                                 cart</button></a></div>
                         </div>
                     ))}
