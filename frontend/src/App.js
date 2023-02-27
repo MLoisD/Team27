@@ -10,6 +10,7 @@ import StoreFront from './pages/customerside/StoreFront';
 import Aboutus from './pages/customerside/Aboutus';
 import Contactus from './pages/customerside/ContactUs';
 import CustomerHome from './pages/customerside/CustomerHome';
+import Basket from './pages/customerside/Basket';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/addBook" element={<AddBook />} />
           <Route exact path="/editBook/:bookID" element={<EditBook />} />
 
+          <Route exact path="/basket" element={<Basket />} />
           <Route exact path="/mainsite" element={<CustomerHome />} />
           <Route exact path='/storefront' element={<StoreFront />} />
           <Route exact path='/about' element={<Aboutus />} />
