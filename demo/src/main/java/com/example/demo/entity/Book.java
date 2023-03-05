@@ -5,6 +5,7 @@ import java.util.Arrays;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
@@ -14,53 +15,25 @@ import lombok.NoArgsConstructor;
 
 
 
-@jakarta.persistence.Entity
+@Entity
 @Table (name = "book")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Book {
-
-  //  public Book(){}
-  /*   public Book(Integer id, String bname, String author, Date datepub, String genre,  Integer agerate, byte[] cover, Float price, String description) {
-        super();
-        this.id = id;
-        this.bname=bname;
-        this.author = author;
-        this.price = price;
-        this.agerate = agerate;
-        this.description = description;
-        this.cover = cover;
-        this.datepub = datepub;
-
-    } */
-/* 
-    public Book (){
-        super();
-    }
-     */
-   
      
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "BookID")
-        private int id;
+    private Integer Bookid;
 
-     public String getBook(){
-        return bname;
-    }
-
-    public void setBook(String bname){
-        this.bname = bname;
-    }  
+    private int id = Bookid;
 
      public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-		this.id = id;
+    public void setId(int Bookid) {
+		this.Bookid = Bookid;
 	}
 
     @Column(name = "BName") 
