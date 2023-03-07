@@ -1,6 +1,6 @@
 package com.t27.inventoryapp.security.jwt;
 
-import com.t27.inventoryapp.security.services.*;
+import com.t27.inventoryapp.security.services.UserDetailsImpl;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
