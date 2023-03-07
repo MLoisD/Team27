@@ -13,14 +13,5 @@ import jakarta.servlet.http.HttpServletRequest;
 
 public class AuthenController extends OncePerRequestFilter{
     
-    @Autowired
-    protected void doFilterInternal(HttpServletRequest request, HttpServletRequest response, FilterChain filterChain) throws ServletException, IOException{
-        try{
-            String jwt = parseJwt(request);
-            if(jwt != null && JwtUtils.getUserNameFromJwtToken(jwt)){
-                String username = JwtUtils.getUserNameFromJwtToken(jwt);
-                
-            }
-        }
-    }
+
 }
