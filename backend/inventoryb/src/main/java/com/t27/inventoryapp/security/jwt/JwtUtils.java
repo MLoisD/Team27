@@ -2,17 +2,19 @@ package com.t27.inventoryapp.security.jwt;
 
 import com.t27.inventoryapp.security.services.*;
 
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
+
+import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 
 
 public class JwtUtils {
@@ -25,17 +27,21 @@ public class JwtUtils {
     @Value("${t27.inventoryb.jwtExpirationMs}")
     private int jwtExpirationMs;
 
-    public String generateJwtToken(UserDetailsImpl userFirst){
-        return generateJwtToken(userFirst.getUsername());
+    public String generateJwtToken(Authentication authentication){
+        
+        UserDetailsImpl userFirst = (UserDetailsImpl) authentication.getPrincipal();
+
+        return Jwts.builder().setSubject((userFirst.getUsername())).setIssuedAt(new Date()).setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+        .signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
     }
 
     public String getUserNameFromJwtToken(String token){
-        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token);
+        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
     }
 
     public boolean validateJwtToken(String authenticToken){
         try {
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
+            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authenticToken);
             return true;
           } catch (SignatureException e) {
             logger.error("Invalid JWT signature: {}", e.getMessage());

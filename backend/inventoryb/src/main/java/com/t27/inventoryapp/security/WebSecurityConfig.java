@@ -61,13 +61,13 @@ public class WebSecurityConfig {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authoriseRequests().antMatchers("/t27/auth/**").permitAll()
+                .authorizeHttpRequests().antMatchers("/t27/auth/**").permitAll()
                 .antMatchers("/t27/test/**").permitAll()
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());
 
-        http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(authenJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
