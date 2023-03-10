@@ -5,9 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.util.Date;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "books")
 public class Book {
 
     @Id
@@ -15,30 +17,39 @@ public class Book {
     private Long BookID;
 
     @Column
+    @NotNull
     private String BName;
   
     @Column
+    @NotNull
     private String Author;
 
     @Column
-    private Date Datepub;
+    @NotNull
+    private int yearPub;
 
     @Column
+    @NotNull
     private String Genre;
     
     @Column
+    @NotNull
     private int AgeRate;
 
     @Column
+    @NotNull
     private String Cover;
     
     @Column
+    @NotNull
     private float Price;
 
     @Column
+    @NotNull
     private String Description;
 
     @Column
+    @NotNull
     private int stockNum;
 
  
@@ -67,12 +78,12 @@ public class Book {
     }
 
 
-    public Date getDatepub() {
-        return Datepub;
+    public int getyearPub() {
+        return yearPub;
     }
 
-    public void setDatepub(Date Datepub) {
-        this.Datepub = Datepub;
+    public void setyearPub(int yearPub) {
+        this.yearPub = yearPub;
     }
 
 

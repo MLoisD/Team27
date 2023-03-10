@@ -21,7 +21,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepo;
 
-    // Gets a list of all customers
+    // Gets a list of all books
     @GetMapping(value = "/bookList")
     public List<Book> getBooks() {
         return bookRepo.findAll();
@@ -41,7 +41,7 @@ public class BookController {
         book ->{
         book.setBName(newBook.getBName());
         book.setAuthor(newBook.getAuthor());
-        book.setDatepub(newBook.getDatepub());
+        book.setyearPub(newBook.getyearPub());
         book.setGenre(newBook.getGenre());
         book.setAgeRate(newBook.getAgeRate());
         book.setCover(newBook.getCover());
