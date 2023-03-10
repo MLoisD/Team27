@@ -21,10 +21,13 @@ public class Role {
     @Column(length= 20)
     private ERole name;
 
+    public Role(Integer id){
+        this.id = id;
+    }
+
     public Role(ERole name){
         this.name = name;
     }
-
 
     /**
      * @return Integer return the id

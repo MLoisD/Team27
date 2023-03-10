@@ -4,8 +4,9 @@
 package com.t27.inventoryapp.model;
 
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -55,6 +56,14 @@ public class User {
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "userid"),
     inverseJoinColumns = @JoinColumn(name = "roleid"))
     private Set<Role> roles = new HashSet<>();
+
+    public Collection<? extends SimpleGrantedAuthority> getAuthorities(){
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        for(Role role : roles){
+            authorities.add(new SimpleGrantedAuthority(role.getName().name()));
+        }
+        return authorities;
+    }
 
     public User(String username, String useremail, String password){
         this.username = username;
@@ -127,5 +136,9 @@ public class User {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+
+    public void addRole(Role role){
+        this.roles.add(role);
+    }
 
 }
