@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableMethodSecurity(
     prePostEnabled = false, securedEnabled = false, jsr250Enabled = true
 )
-public class ApplicationSecurity{
+public class WebSecConfig{
 
 
     //taken from spring blog (replacement for testing)
