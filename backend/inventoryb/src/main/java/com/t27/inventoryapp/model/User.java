@@ -6,8 +6,6 @@ package com.t27.inventoryapp.model;
 
 import java.util.*;
 
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -22,14 +20,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.Size;
 
-
 @Entity
     @Table(name= "users", uniqueConstraints ={
         @UniqueConstraint(columnNames = "username"),
         @UniqueConstraint(columnNames = "useremail")
     })
     
-public class User {
+public class User{
     
     //adding @notblank makes sure that there are no valid inputs that contain 'null'
     // that was an issue I faced during the prototype run
@@ -57,21 +54,13 @@ public class User {
     inverseJoinColumns = @JoinColumn(name = "roleid"))
     private Set<Role> roles = new HashSet<>();
 
-    public Collection<? extends SimpleGrantedAuthority> getAuthorities(){
-        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        for(Role role : roles){
-            authorities.add(new SimpleGrantedAuthority(role.getName().name()));
-        }
-        return authorities;
-    }
+    public User(){}
 
     public User(String username, String useremail, String password){
         this.username = username;
         this.useremail = useremail;
         this.password = password;
     }
-
-    
 
     /**
      * @return Long return the id
@@ -136,9 +125,5 @@ public class User {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
-
-    public void addRole(Role role){
-        this.roles.add(role);
-    }
 
 }

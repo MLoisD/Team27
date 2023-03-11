@@ -1,6 +1,6 @@
 package com.t27.inventoryapp.repository;
 
-//import java.util.Optional;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -8,9 +8,10 @@ import com.t27.inventoryapp.model.*;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    //Optional<User> findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
-    //Boolean existsbyUsername(String username);
+    Boolean existsbyUsername(String username);
 
-    //Boolean existsByEmail(String email);
+    Boolean existsByEmail(String email);
+
 }

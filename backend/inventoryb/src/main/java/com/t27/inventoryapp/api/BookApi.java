@@ -1,5 +1,5 @@
 //this is a replacement for the CRUD BookController class used in the prototype
-package com.t27.inventoryapp.api;
+package com.t27.inventoryapp.model.api;
 
 import com.t27.inventoryapp.model.Book;
 
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.t27.inventoryapp.repository.BookRepository;
 import java.net.URI;
+
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import java.util.*;
 
@@ -23,6 +25,7 @@ public class BookApi {
     private BookRepository bookRepo;
 
     @PostMapping
+    @RolesAllowed("ROLE_ADMIN")
     public ResponseEntity<Book> createBook(@RequestBody @Valid Book book){
         Book savedB = bookRepo.save(book);
         URI bookURI = URI.create("/bookmanagement/" + savedB.getBookID());
@@ -30,6 +33,7 @@ public class BookApi {
     }
 
     @GetMapping(value = "/booklisted")
+    @RolesAllowed({"ROLE_ADMIN", "ROLE_CUSTOMER"})
     public List<Book> getBooks() {
         return bookRepo.findAll();
     }
