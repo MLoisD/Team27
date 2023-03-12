@@ -31,5 +31,6 @@ public class AuthenController {
     @Autowired
     JwtTokenUtil jwtUtils;
 
+    
 
 }
