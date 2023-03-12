@@ -29,30 +29,20 @@ public class Role {
         this.name = name;
     }
 
-    /**
-     * @return Integer return the id
-     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
+
     public void setId(Integer id) {
         this.id = id;
     }
 
-    /**
-     * @return ERole return the name
-     */
+
     public ERole getName() {
         return name;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setName(ERole name) {
         this.name = name;
     }

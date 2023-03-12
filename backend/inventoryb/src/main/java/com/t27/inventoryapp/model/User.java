@@ -53,67 +53,45 @@ public class User{
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "userid"),
     inverseJoinColumns = @JoinColumn(name = "roleid"))
     private Set<Role> roles = new HashSet<>();
-
-    public User(){}
-
+    
     public User(String username, String useremail, String password){
         this.username = username;
         this.useremail = useremail;
         this.password = password;
     }
 
-    /**
-     * @return Long return the id
-     */
+ 
     public Long getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-     * @return String return the username
-     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * @param username the username to set
-     */
+ 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    /**
-     * @return String return the useremail
-     */
+
     public String getUseremail() {
         return useremail;
     }
 
-    /**
-     * @param useremail the useremail to set
-     */
+
     public void setUseremail(String useremail) {
         this.useremail = useremail;
     }
 
-    /**
-     * @return String return the password
-     */
     public String getPassword() {
         return password;
     }
 
-    /**
-     * @param password the password to set
-     */
     public void setPassword(String password) {
         this.password = password;
     }
