@@ -16,23 +16,21 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table (name = "book")
+//@Table (name = "book")
 
 public class Book {
-     
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "BookID")
-    private Integer Bookid;
+    //@Column(name = "BookID")
+    private long Bookid;
 
-    private int id = Bookid;
+    private long id = Bookid;
 
-     public int getId() {
+     public long getId() {
         return id;
     }
 
-    public void setId(int Bookid) {
+    public void setId(long Bookid) {
 		this.Bookid = Bookid;
 	}
 
@@ -132,6 +130,22 @@ public class Book {
     public void setDescription(String description) {
         this.description = description;
     } 
+
+    public Book(){
+
+    }
+
+    public Book(Long id, String bookName, String author, Date datepublished, String genre, Integer agerate, Float price, String description) {
+        this.BookID= id;
+        this.bname = bookName;
+        this.author = author;
+        this.agerate = agerate;
+        //this.cover = cover;
+        this.datepub = datepublished;
+        this.genre = genre;
+        this.price = price;
+        this.description = description;
+    }
 
  /*    @Override
 	public String toString() {
