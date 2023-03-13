@@ -63,7 +63,7 @@ public class WebSecConfig{
         http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorisedHandler)
             .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and().authorizeHttpRequests().requestMatchers("/t27/auth/**").permitAll()
-            .requestMatchers("/t27/test/**").permitAll().anyRequest()
+            .requestMatchers("/t27/test/**").permitAll().requestMatchers("/**").permitAll().anyRequest()
             .authenticated();
 
         http.authenticationProvider(authenticationProvider());

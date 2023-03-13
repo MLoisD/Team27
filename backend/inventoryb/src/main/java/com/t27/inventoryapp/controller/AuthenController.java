@@ -67,6 +67,7 @@ public class AuthenController {
     }
 
     // signup method (covers existing usernames and emails, new users)
+    @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signupRequest) {
 
         // existing credentials
