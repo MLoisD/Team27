@@ -70,7 +70,7 @@ public class AuthenController {
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signupRequest) {
 
         // existing credentials
-        if (userRepo.existsbyUsername(signupRequest.getUsername())) {
+        if (userRepo.existsByUsername(signupRequest.getUsername())) {
             return ResponseEntity.badRequest()
                     .body(new MessageRespone("Username is already in use"));
         }
