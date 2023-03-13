@@ -42,7 +42,7 @@ public class User{
     @NotBlank
     @Size(max = 100)
     @Email
-    private String useremail;
+    private String email;
 
     @NotBlank
     @Size(max = 100)
@@ -54,9 +54,9 @@ public class User{
     inverseJoinColumns = @JoinColumn(name = "roleid"))
     private Set<Role> roles = new HashSet<>();
     
-    public User(String username, String useremail, String password){
+    public User(String username, String email, String password){
         this.username = username;
-        this.useremail = useremail;
+        this.email = email;
         this.password = password;
     }
 
@@ -80,12 +80,12 @@ public class User{
 
 
     public String getUseremail() {
-        return useremail;
+        return email;
     }
 
 
-    public void setUseremail(String useremail) {
-        this.useremail = useremail;
+    public void setUseremail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
