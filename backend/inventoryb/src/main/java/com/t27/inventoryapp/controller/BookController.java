@@ -15,7 +15,7 @@ import com.t27.inventoryapp.model.Book;
 import java.util.*;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class BookController {
 
     @Autowired

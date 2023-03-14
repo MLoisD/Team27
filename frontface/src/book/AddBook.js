@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function AddBook() {
 
-    let navigate=useNavigate();
+    let navigate = useNavigate();
 
     const [book, setBook] = useState({
         bname: "",
         author: "",
         genre: "",
+        yearPub: "",
         ageRate: "",
         cover: "",
         description: "",
@@ -17,13 +18,13 @@ export default function AddBook() {
         price: ""
     });
 
-    const { bname, author, genre, ageRate, cover, description, stockNum, price } = book;
+    const { bname, author, genre, ageRate, yearPub, cover, description, stockNum, price } = book;
 
     const onInputChange = (e) => {
         setBook({ ...book, [e.target.name]: e.target.value })
     };
 
-    const onSubmit =async (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         await axios.post("http://localhost:8080/addBook", book)
         navigate("/")
@@ -71,6 +72,19 @@ export default function AddBook() {
                                 placeholder='Enter book genre'
                                 name='genre'
                                 value={genre}
+                                onChange={(e) => onInputChange(e)} />
+                        </div>
+                        <div className='mb-3'>
+                            <label htmlFor='YearPub' className='form-label'>
+                                Publishing year
+                            </label>
+                            <input
+                                type={"number"}
+                                min='0'
+                                className="form-control"
+                                placeholder='Enter year published'
+                                name='yearPub'
+                                value={yearPub}
                                 onChange={(e) => onInputChange(e)} />
                         </div>
                         <div className='mb-3'>

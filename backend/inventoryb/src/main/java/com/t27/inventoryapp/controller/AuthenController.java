@@ -117,4 +117,10 @@ public class AuthenController {
 
     }
 
+    //show all users
+
+    //show all books
+
+    
+
 }
