@@ -19,7 +19,7 @@ const Sidebar = () => {
                 
       <div className="top">
       <Link to="/" style={{ textDecoration: "none", color: "grey" }}>
-        <span className="logo"> BOOKWORMS</span>
+        <span className="logo"> <img src={require("./bookworms_logo.png")} alt=""/></span>
       </Link>
    </div>
    <hr />
