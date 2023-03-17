@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-
+    <script src="search.js"></script>
     <style type="text/css">
       body{
         font-family: "Chakra Petch";
@@ -80,6 +80,22 @@
       text-decoration: none;
       color: black;
      }
+     .search_bar{
+      float: right;
+      padding: 15px;
+      margin-right: 60px;
+     }
+     /* Increase the font-size of the search icon */
+.fa-search {
+  font-size: 25px;
+  color: #568259;
+}
+
+/* Increase the font-size of the input field */
+#search_item {
+  font-size: 20px;
+  
+}
   </style>
   </head>
 
@@ -97,10 +113,20 @@
           <a href="#contact">extra</a></li>
         </div>
       </nav>
+      <section class="search_bar">
+        <form>
+          <i class="fa fa-search"></i>
+          <input type="text" name="" id="search_item" placeholder="search books" onkeyup="search()">
+        </form>
+        <!-- <form class="example" action="action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form> -->
 
+      </section>
       <section class="product_list">
 
-        <div class="product_container">
+        <div class="product_container" id="product_container">
 
         <div class="card">
           <div class="image"><img src="images\book2.jpg"></div>
