@@ -36,7 +36,7 @@ const Booktable = () => {
   return (
     <div className="booktable">
       <div className="booktableTitle">
-        Add New Book
+        BOOKS
         <Link to="/books/new" className="link">
           Add New
         </Link>

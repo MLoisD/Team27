@@ -19,7 +19,7 @@ const List = () => {
     {
       id: 2235235,
       product: "Atomic Habits",
-      customer: "Stark",
+      customer: "Jane Doe",
       amount: 1,
       status: "Pending",
     },

@@ -3,7 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Widget from "../../components/widget/Widget"
 import Featured from "../../components/featured/Featured"
 import Chart from "../../components/chart/Chart"
-import Table from "../../components/table/Table";
+import Ordertable from "../../components/ordertable/Ordertable";
 
 import "./home.scss"
 
@@ -24,7 +24,7 @@ const Home = () => {
           <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
           
         </div>
-        <Table/>
+       <Ordertable/>
         </div>
     </div>
   )
