@@ -6,6 +6,7 @@ import Single from "./pages/single/Single";
 import Booksingle from "./pages/booksingle/Booksingle";
 import New from "./pages/new/New";
 import Orders from "./pages/orders/Orders";
+import User from "./pages/user/User";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/">
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="user" element={<User />} />
             <Route path="users">
               <Route index element={<List />} />
               <Route path=":userId" element={<Single />} />

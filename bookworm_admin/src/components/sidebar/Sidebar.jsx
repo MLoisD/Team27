@@ -75,7 +75,7 @@ const Sidebar = () => {
           </li>
           </Link>
           <p className="title">USER </p>
-          <Link to="/" style={{ textDecoration: "none", color: "grey" }}>
+          <Link to="/user" style={{ textDecoration: "none", color: "grey" }}>
           <li>
             <AssignmentIndRoundedIcon className="icon"/>
             <span>PROFILE</span>
