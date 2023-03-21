@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.security.core.Authentication;
 
+import com.t27.inventoryapp.details.UserDetailsImpl;
 import com.t27.inventoryapp.security.services.*;
 
 import io.jsonwebtoken.Jwts;

@@ -55,6 +55,17 @@ public class User{
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "userid"),
     inverseJoinColumns = @JoinColumn(name = "roleid"))
     private Set<Role> roles = new HashSet<>();
+
+    public boolean hasRoles(ERole roleName){
+        Iterator<Role> iterator = this.roles.iterator();
+        while(iterator.hasNext()){
+            Role role = iterator.next();
+            if(role.getName().equals(roleName)){
+                return true;
+            }
+        }
+        return false;
+    }
     
     public User(String username, String email, String password){
         this.username = username;
@@ -106,5 +117,13 @@ public class User{
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+ 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
 }

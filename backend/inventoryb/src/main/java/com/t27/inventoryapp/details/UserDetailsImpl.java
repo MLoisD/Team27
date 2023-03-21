@@ -8,10 +8,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.t27.inventoryapp.model.ERole;
+import com.t27.inventoryapp.model.Role;
 import com.t27.inventoryapp.model.User;
 
 public class UserDetailsImpl implements UserDetails {
 
+    private User user;
     private Long id;
     private String username;
     private String email;
@@ -41,7 +44,17 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        Set<Role> roles = user.getRoles();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+         
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName().toString()));
+        }
         return authorities;
+    }
+
+    public boolean hasRole(ERole roleName){
+        return this.user.hasRoles(roleName);
     }
 
     public Long getId() {

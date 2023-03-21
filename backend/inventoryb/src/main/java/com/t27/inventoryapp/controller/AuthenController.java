@@ -16,7 +16,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import com.t27.inventoryapp.repository.*;
 import com.t27.inventoryapp.security.jwt.*;
-import com.t27.inventoryapp.security.services.UserDetailsImpl;
 
 import jakarta.validation.Valid;
 
@@ -24,6 +23,7 @@ import com.t27.inventoryapp.payload.request.LoginRequest;
 import com.t27.inventoryapp.payload.request.SignupRequest;
 import com.t27.inventoryapp.payload.response.JwtResponse;
 import com.t27.inventoryapp.payload.response.MessageRespone;
+import com.t27.inventoryapp.details.UserDetailsImpl;
 import com.t27.inventoryapp.model.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)

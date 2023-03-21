@@ -1,4 +1,5 @@
 package com.t27.inventoryapp.security;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -21,10 +22,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@EnableMethodSecurity(
-    prePostEnabled = false, securedEnabled = false, jsr250Enabled = true
-)
-public class WebSecConfig{
+@EnableMethodSecurity(prePostEnabled = false, securedEnabled = false, jsr250Enabled = true)
+public class WebSecConfig {
 
     @Autowired
     UserDetailsServiceImpl userDetailsService;
@@ -33,22 +32,22 @@ public class WebSecConfig{
     private AuthEntryPointJwt unauthorisedHandler;
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public AuthTokenFilter authJwtTokenFilter(){
+    public AuthTokenFilter authJwtTokenFilter() {
         return new AuthTokenFilter();
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception{
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
     }
 
     @Bean
-    public DaoAuthenticationProvider authenticationProvider(){
+    public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenProvider = new DaoAuthenticationProvider();
 
         authenProvider.setUserDetailsService(userDetailsService);
@@ -59,22 +58,23 @@ public class WebSecConfig{
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-
-        http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorisedHandler)
-            .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and().authorizeHttpRequests().requestMatchers("/t27/auth/**").permitAll()
-            .requestMatchers("/t27/test/**").permitAll().requestMatchers("/**").permitAll().anyRequest()
-            .authenticated();
-
-        http.authenticationProvider(authenticationProvider());
-        http.addFilterBefore(authJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests()
+        .requestMatchers("/home").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+        .requestMatchers("/").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+        .requestMatchers("/edit/**").hasAnyAuthority("ROLE_ADMIN")
+        .requestMatchers("/delete/**").hasAnyAuthority("ROLE_ADMIN")
+        .anyRequest().authenticated()
+                .and()
+                .formLogin(login -> 
+                login.loginPage("/login").usernameParameter("email")
+                .defaultSuccessUrl("/users").successHandler(loginSuccess).permitAll())
+                .logout(logout -> logout.logoutSuccessUrl("/home").permitAll());
         return http.build();
+
+       // http.addFilterBefore(unauthorisedHandler, UsernamePasswordAuthenticationFilter.class);
     }
 
-    protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception{
-        http.authorizeHttpRequests().anyRequest().authenticated()
-            .and().formLogin().permitAll().and().logout().permitAll();
-    }
-
+    @Autowired
+    private LoginSuccessHandler loginSuccess;
 }
