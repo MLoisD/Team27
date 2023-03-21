@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.t27.inventoryapp.details.UserDetailsImpl;
 import com.t27.inventoryapp.model.*;
 import com.t27.inventoryapp.repository.*;
 
@@ -19,8 +21,11 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws  UsernameNotFoundException{
-        User user = userRepo.findByUsername(username)
-            .orElseThrow(() -> new UsernameNotFoundException("User: " + username + "not found"));
+        User user = userRepo.getUserByUsername(username);
+
+        if (user == null) {
+            throw new UsernameNotFoundException("Could not find user");
+        }
 
         return UserDetailsImpl.build(user);
     }

@@ -1,4 +1,4 @@
-package com.teamtwtysvn.inventoryback.model;
+package com.t27.inventoryapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

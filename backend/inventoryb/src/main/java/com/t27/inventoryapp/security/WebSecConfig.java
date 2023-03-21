@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,5 +72,9 @@ public class WebSecConfig{
         return http.build();
     }
 
+    protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception{
+        http.authorizeHttpRequests().anyRequest().authenticated()
+            .and().formLogin().permitAll().and().logout().permitAll();
+    }
 
 }

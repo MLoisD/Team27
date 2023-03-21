@@ -1,4 +1,4 @@
-package com.t27.inventoryapp.security.services;
+package com.t27.inventoryapp.details;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.t27.inventoryapp.model.User;
 
 public class UserDetailsImpl implements UserDetails {
-
-    private static final long serialVersionUID = 1L;
 
     private Long id;
     private String username;
