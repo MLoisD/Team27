@@ -47,7 +47,7 @@ public class WebSecConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers("/home").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers("/home").permitAll()
                 .requestMatchers("/").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .requestMatchers("/edit/**").hasAnyAuthority("ROLE_ADMIN")
                 .requestMatchers("/delete/**").hasAnyAuthority("ROLE_ADMIN")
