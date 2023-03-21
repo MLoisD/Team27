@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,20 +14,16 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import com.t27.inventoryapp.repository.*;
-import com.t27.inventoryapp.security.jwt.*;
 
 import jakarta.validation.Valid;
 
-import com.t27.inventoryapp.payload.request.LoginRequest;
-import com.t27.inventoryapp.payload.request.SignupRequest;
-import com.t27.inventoryapp.payload.response.JwtResponse;
-import com.t27.inventoryapp.payload.response.MessageRespone;
 import com.t27.inventoryapp.details.UserDetailsImpl;
 import com.t27.inventoryapp.model.*;
+import com.t27.inventoryapp.payload.request.LoginRequest;
+import com.t27.inventoryapp.payload.request.SignupRequest;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/t27/auth")
 public class AuthenController {
 
     @Autowired
@@ -43,9 +38,6 @@ public class AuthenController {
     @Autowired
     PasswordEncoder encoder;
 
-    @Autowired
-    JwtTokenUtil jwtUtils;
-
     // login method
     @PostMapping("/login")
     public ResponseEntity<?> authenticatingUser(@Valid @RequestBody LoginRequest LoginRequest) {
@@ -55,14 +47,11 @@ public class AuthenController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        String jwt = jwtUtils.generateJwtToken(authentication);
-
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-        return ResponseEntity.ok(
-                new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(), roles));
+        return ResponseEntity.ok("You are logged in");
 
     }
 
@@ -73,12 +62,12 @@ public class AuthenController {
         // existing credentials
         if (userRepo.existsByUsername(signupRequest.getUsername())) {
             return ResponseEntity.badRequest()
-                    .body(new MessageRespone("Username is already in use"));
+                    .body("Username is already in use");
         }
 
         if (userRepo.existsByEmail(signupRequest.getUseremail())) {
             return ResponseEntity.badRequest()
-                    .body(new MessageRespone("Email is already in use"));
+                    .body("Email is already in use");
         }
 
         User user = new User(signupRequest.getUsername(), signupRequest.getUseremail(),
@@ -113,7 +102,7 @@ public class AuthenController {
         user.setRoles(roles);
         userRepo.save(user);
 
-        return ResponseEntity.ok(new MessageRespone("User registered"));
+        return ResponseEntity.ok("User registered");
 
     }
 

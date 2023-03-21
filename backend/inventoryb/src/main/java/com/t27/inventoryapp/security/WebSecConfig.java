@@ -3,18 +3,13 @@ package com.t27.inventoryapp.security;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.t27.inventoryapp.security.jwt.AuthEntryPointJwt;
-import com.t27.inventoryapp.security.jwt.AuthTokenFilter;
 import com.t27.inventoryapp.security.services.UserDetailsServiceImpl;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,17 +23,9 @@ public class WebSecConfig {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 
-    @Autowired
-    private AuthEntryPointJwt unauthorisedHandler;
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public AuthTokenFilter authJwtTokenFilter() {
-        return new AuthTokenFilter();
     }
 
     @Bean
@@ -67,8 +54,9 @@ public class WebSecConfig {
         .anyRequest().authenticated()
                 .and()
                 .formLogin(login -> 
-                login.loginPage("/login").usernameParameter("email")
-                .defaultSuccessUrl("/users").successHandler(loginSuccess).permitAll())
+                login.loginPage("/login").usernameParameter("username")
+                .passwordParameter("password")
+                    .successHandler(loginSuccess).permitAll())
                 .logout(logout -> logout.logoutSuccessUrl("/home").permitAll());
         return http.build();
 
