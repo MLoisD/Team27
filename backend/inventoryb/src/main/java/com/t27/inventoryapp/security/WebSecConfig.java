@@ -47,16 +47,16 @@ public class WebSecConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-        .requestMatchers("/home").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-        .requestMatchers("/").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-        .requestMatchers("/edit/**").hasAnyAuthority("ROLE_ADMIN")
-        .requestMatchers("/delete/**").hasAnyAuthority("ROLE_ADMIN")
-        .anyRequest().authenticated()
+                .requestMatchers("/home").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers("/").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers("/edit/**").hasAnyAuthority("ROLE_ADMIN")
+                .requestMatchers("/delete/**").hasAnyAuthority("ROLE_ADMIN")
+                .anyRequest().authenticated()
                 .and()
-                .formLogin(login -> 
-                login.usernameParameter("email")
-                .defaultSuccessUrl("/home").permitAll())
-                .logout(logout -> logout.logoutSuccessUrl("/all").permitAll());
+                .formLogin(login ->
+                        login.permitAll())
+                .logout(logout -> logout.permitAll())
+                .exceptionHandling(handling -> handling.accessDeniedPage("/403"));
         return http.build();
 
        // http.addFilterBefore(unauthorisedHandler, UsernamePasswordAuthenticationFilter.class);

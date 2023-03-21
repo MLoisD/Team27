@@ -3,6 +3,7 @@ package com.t27.inventoryapp.security.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
@@ -29,5 +30,15 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
         return UserDetailsImpl.build(user);
     }
+
+   /* public User getLoggedInUser(Authentication authentication){
+        if(authentication == null){
+            return null;
+        }
+        User user = null;
+        Object principle = authentication.getPrincipal();
+        if(principle instanceof UserDetailsImpl){
+            user = ((UserDetailsImpl) principle).getUsername();
+        }*/ 
 
 }
