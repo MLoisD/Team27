@@ -26,4 +26,61 @@ public class OrderItem {
     private User user;
 
     private int quantity;
+
+    /**
+     * @return Integer return the id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * @return Book return the book
+     */
+    public Book getBook() {
+        return book;
+    }
+
+    /**
+     * @param book the book to set
+     */
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    /**
+     * @return User return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    /**
+     * @return int return the quantity
+     */
+    public int getQuantity() {
+        return quantity;
+    }
+
+    /**
+     * @param quantity the quantity to set
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
 }

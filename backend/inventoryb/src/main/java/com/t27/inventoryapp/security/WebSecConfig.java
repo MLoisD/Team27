@@ -54,10 +54,9 @@ public class WebSecConfig {
         .anyRequest().authenticated()
                 .and()
                 .formLogin(login -> 
-                login.loginPage("/login").usernameParameter("username")
-                .passwordParameter("password")
-                    .successHandler(loginSuccess).permitAll())
-                .logout(logout -> logout.logoutSuccessUrl("/home").permitAll());
+                login.usernameParameter("email")
+                .defaultSuccessUrl("/home").permitAll())
+                .logout(logout -> logout.logoutSuccessUrl("/all").permitAll());
         return http.build();
 
        // http.addFilterBefore(unauthorisedHandler, UsernamePasswordAuthenticationFilter.class);
