@@ -20,12 +20,12 @@ export default function InventoryHome() {
     }
 
     const loadBooks = async () => {
-        const result = await axios.get("http://localhost:8080/bookList")
+        const result = await axios.get("http://localhost:8080/book/bookList")
         setBooks(result.data)
     }
 
     const deleteBooks = async (bookID) => {
-        await axios.delete(`http://localhost:8080/bookList/${bookID}`)
+        await axios.delete(`http://localhost:8080/book/bookList/${bookID}`)
         loadBooks()
     }
 
@@ -84,7 +84,7 @@ export default function InventoryHome() {
                                     <th scope="row" key={index}>{index + 1}</th>
                                     <td>{book.bname}</td>
                                     <td>{book.author}</td>
-                                    <td>{book.datepub}</td>
+                                    <td>{book.yearPub}</td>
                                     <td>{book.genre}</td>
                                     <td>{book.ageRate}</td>
                                     <td>{book.cover}</td>
@@ -93,10 +93,10 @@ export default function InventoryHome() {
                                     <td>{book.stockNum}</td>
                                     <td>
                                         <Link className="btn btn-outline-danger mx-2"
-                                        to={`/editBook/${book.bookID}`}
+                                        to={`/updateBook/${book.bookID}`}
                                         >Edit Book</Link>
                                         <Link className="btn btn-danger mx-2"
-                                        onClick={() => deleteBooks(book.bookID)}
+                                        onClick={() => `/deleteBook/${book.bookID}`}
                                         >Delete Book</Link>
                                     </td>
                                 </tr>

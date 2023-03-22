@@ -12,6 +12,7 @@ export default function EditBook() {
         bname: "",
         author: "",
         genre: "",
+        yearPub: "",
         ageRate: "",
         cover: "",
         description: "",
@@ -19,7 +20,7 @@ export default function EditBook() {
         price: ""
     });
 
-    const { bname, author, genre, ageRate, cover, description, stockNum, price } = book;
+    const { bname, author, genre,yearPub, ageRate, cover, description, stockNum, price } = book;
 
     const onInputChange = (e) => {
         setBook({ ...book, [e.target.name]: e.target.value })
@@ -36,7 +37,7 @@ export default function EditBook() {
     };
 
     const loadBooks = async () => { 
-        const result = await axios.get(`http://localhost:8080/bookList/${bookID}`)
+        const result = await axios.get(`http://localhost:8080/book/bookList/${bookID}`)
         setBook(result.data)
     }
     return (
@@ -81,6 +82,19 @@ export default function EditBook() {
                                 placeholder='Enter book genre'
                                 name='genre'
                                 value={genre}
+                                onChange={(e) => onInputChange(e)} />
+                        </div>
+                        <div className='mb-3'>
+                            <label htmlFor='YearPub' className='form-label'>
+                                Publishing year
+                            </label>
+                            <input
+                                type={"number"}
+                                min='0'
+                                className="form-control"
+                                placeholder='Enter year published'
+                                name='yearPub'
+                                value={yearPub}
                                 onChange={(e) => onInputChange(e)} />
                         </div>
                         <div className='mb-3'>
