@@ -52,19 +52,6 @@ public class Book {
     @NotNull
     private int stockNum;
 
-    public Book(){}
-
-    public Book(String BName, String Author, int yearPub, String Genre, int AgeRate, String Cover,float Price,String Description, int stockNum){
-        this.AgeRate = AgeRate;
-        this.Author = Author;
-        this.Description = Description;
-        this.yearPub = yearPub;
-        this.Genre = Genre;
-        this.Price = Price;
-        this.stockNum = stockNum;
-        this.BName = BName;
-    }
-
  
     public Long getBookID() {
         return BookID;

@@ -10,15 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.t27.inventoryapp.repository.BookRepository;
+import com.t27.inventoryapp.repository.*;
 import com.t27.inventoryapp.model.Book;
 import java.util.*;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/book")
 public class BookController {
 
     @Autowired

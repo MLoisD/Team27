@@ -1,8 +1,11 @@
 package com.t27.inventoryapp.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.Query;
+
 import com.t27.inventoryapp.model.*;
 
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -15,6 +18,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
   Boolean existsByUsername(String username);
 
   Boolean existsByEmail(String email);
-
-  public User getUserByEmail(String email);
 }
