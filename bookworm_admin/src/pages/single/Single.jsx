@@ -30,6 +30,10 @@ const Single = () => {
                   <span className="itemValue">+1 2345 67 89</span>
                 </div>
                 <div className="detailItem">
+                  <span className="itemKey">Role:</span>
+                  <span className="itemValue">Admin</span>
+                </div>
+                <div className="detailItem">
                   <span className="itemKey">Address:</span>
                   <span className="itemValue">
                   Aston St, Birmingham B4 7ET

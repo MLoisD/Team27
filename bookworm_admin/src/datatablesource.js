@@ -1,17 +1,14 @@
+//USERS
 export const userColumns = [
-    { field: "id", headerName: "ID", width: 70 },
+    { 
+      field: "id", 
+      headerName: "ID", 
+      width: 70 
+    },
     {
-      field: "user",
-      headerName: "User",
+      field: "username",
+      headerName: "Customer",
       width: 230,
-      renderCell: (params) => {
-        return (
-          <div className="cellWithImg">
-            <img className="cellImg" src={params.row.img} alt="avatar" />
-            {params.row.username}
-          </div>
-        );
-      },
     },
     {
       field: "email",
@@ -24,6 +21,12 @@ export const userColumns = [
       headerName: "Age",
       width: 100,
     },
+
+    {
+      field: "role",
+      headerName: "Role",
+      width: 100,
+    },
    
   ];
   
@@ -32,9 +35,9 @@ export const userColumns = [
     {
       id: 1,
       username: "Jane Doe",    
-      img: "https://images.pexels.com/photos/4355346/pexels-photo-4355346.jpeg?auto=compress&cs=tinysrgb&w=800",
       email: "jane_doe@gmail.com",
       age: 35,
+      role: "Admin",
     },
     {
       id: 2,
@@ -42,62 +45,82 @@ export const userColumns = [
       img: "https://images.pexels.com/photos/4571943/pexels-photo-4571943.jpeg?auto=compress&cs=tinysrgb&w=1200",
       email: "JamieLannister@gmail.com",
       age: 42,
+      role: "Customer",
+    },
+   
+  ];
+  
+
+  //BOOKS 
+  export const bookColumns = [
+    { field: "id", headerName: "ID", width: 70 },
+    {
+      field: "bookname",
+      headerName: "Title",
+      width: 230,
+      renderCell: (params) => {
+        return (
+          <div className="cellWithImg">
+            <img className="cellImg" src={params.row.img} alt="avatar" />
+            {params.row.bookname}
+          </div>
+        );
+      },
+      
     },
     {
-      id: 3,
-      username: "Lannister Canan",
-      img: "https://images.pexels.com/photos/3748221/pexels-photo-3748221.jpeg?auto=compress&cs=tinysrgb&w=800",
-      email: "LannisterCanan@gmail.com",
-      age: 45,
+      field: "author",
+      headerName: "Author",
+      width: 230,
+    },
+  
+    {
+      field: "genre",
+      headerName: "Category",
+      width: 100,
+    },
+    
+    {
+      field: "stock",
+      headerName: "Stock",
+      width: 160,
+      renderCell: (params) => {
+        return (
+          <div className={`cellWithStatus ${params.row.stock}`}>
+            {params.row.stock}
+          </div>
+        );
+      },
+    },
+  ];
+
+  export const bookRows = [
+    {
+      id: 6789,
+      bookname: "12 Rules for Life",
+      img: "https://cdn.waterstones.com/bookjackets/large/9780/1419/9780141988511.jpg",
+      stock: "63",
+      author: "Jordan B. Peterson",
+      genre: "Philosophy",
+      
     },
     {
-      id: 4,
-      username: "Stark",
-      img: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=800",
-      email: "Stark@gmail.com",
-      age: 16,
+      id: 1234,
+      bookname: "Atomic Habits",
+      img: "https://cdn.waterstones.com/override/v1/large/9781/8479/9781847941831.jpg",
+      stock: "35",
+      author: "James Clear",
+      genre: "Self Help",
     },
+  
     {
-      id: 5,
-      username: "Targaryen",
-      img: "https://images.pexels.com/photos/3748221/pexels-photo-3748221.jpeg?auto=compress&cs=tinysrgb&w=800",
-      email: "Targaryen@gmail.com",
-      age: 22,
+      id: 2345,
+      bookname: "Spare",
+      img: "https://cdn.waterstones.com/bookjackets/large/9780/8575/9780857504791.jpg",
+      stock: "249",
+      author: "Prince Harry",
+      genre: "Biography",
     },
-    {
-      id: 6,
-      username: "Melisandre",
-      img: "https://images.pexels.com/photos/2755165/pexels-photo-2755165.jpeg?auto=compress&cs=tinysrgb&w=800",
-      email: "Melisandre@gmail.com",
-      age: 15,
-    },
-    {
-      id: 7,
-      username: "Clifford",
-      img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=800",
-      email: "Clifford@gmail.com",
-      age: 44,
-    },
-    {
-      id: 8,
-      username: "Frances",
-      img: "https://images.pexels.com/photos/2741701/pexels-photo-2741701.jpeg?auto=compress&cs=tinysrgb&w=800",
-      email: "Frances@gmail.com",
-      age: 36,
-    },
-    {
-      id: 10,
-      username: "Roxie",
-      img: "https://images.pexels.com/photos/2709388/pexels-photo-2709388.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      email: "Roxie@gmail.com",
-      age: 65,
-    },
-    {
-      id: 10,
-      username: "Dixie",
-      img: "https://images.pexels.com/photos/2709388/pexels-photo-2709388.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      email: "Dixie@gmail.com",
-      age: 65,
-    },
+    
   ];
   

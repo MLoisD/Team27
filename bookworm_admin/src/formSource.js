@@ -45,40 +45,64 @@ export const userInputs = [
   export const productInputs = [
     {
       id: 1,
+      label: "Book ID",
+      type: "text",
+      placeholder: "287",
+    },
+    {
+      id: 2,
       label: "Title",
       type: "text",
       placeholder: "12 Rules for Life",
     },
     {
-      id: 2,
+      id: 3,
       label: "Author",
       type: "text",
       placeholder: "Author",
     },
     {
-      id: 3,
+      id: 4,
       label: "Description",
       type: "text",
       placeholder: "Description",
     },
     {
-      id: 4,
+      id: 5,
       label: "Category",
       type: "text",
       placeholder: "Genre",
     },
     {
-      id: 5,
+      id: 6,
       label: "Stock",
-      type: "text",
+      type: "text", 
       placeholder: "Stock Amount",
     },
     {
-      id: 6,
+      id: 7,
+      label: "Age Rate",
+      type: "text",
+      placeholder: "£19.99",
+    },
+    {
+      id: 8,
+      label: "Cover",
+      type: "text",
+      placeholder: "Hardback",
+    },
+    {
+      id: 9,
+      label: "Date Publised",
+      type: "date",
+      placeholder: "£19.99",
+    },
+    {
+      id: 10,
       label: "Price",
       type: "text",
       placeholder: "£19.99",
     },
-    
+ 
   ];
   

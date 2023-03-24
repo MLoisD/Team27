@@ -1,7 +1,7 @@
 import "./list.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
-import Datatable from "../../components/usertable/Usertable"
+import Tables from "../../components/usertable/Usertable.jsx"
 
 const List = () => {
   return (
@@ -9,7 +9,7 @@ const List = () => {
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
-        <Datatable/>
+        <Tables/>
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import "./booktable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { bookColumns, bookRows } from "../../booktablesource";
+import { bookColumns, bookRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

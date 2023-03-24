@@ -33,6 +33,7 @@ const Usertable = () => {
       },
     },
   ];
+  
   return (
     <div className="usertable">
       <div className="usertableTitle">
@@ -40,6 +41,7 @@ const Usertable = () => {
         <Link to="/users/new" className="link">
           Add New
         </Link>
+      
       </div>
       <DataGrid
         className="datagrid"

@@ -38,13 +38,25 @@ const Single = () => {
                   <span className="itemKey">Stock:</span>
                   <span className="itemValue">35</span>
                 </div>
+                <div className="detailItem">
+                  <span className="itemKey">Age Rating:</span>
+                  <span className="itemValue">14</span>
+                </div>
+                <div className="detailItem">
+                  <span className="itemKey">Cover Type:</span>
+                  <span className="itemValue">Hardback</span>
+                </div>
+                <div className="detailItem">
+                  <span className="itemKey">Price:</span>
+                  <span className="itemValue">£19.90</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div className="bottom">
-          <h1 className="title">User Transactions</h1>
+          <h1 className="title">Book Orders</h1>
           <List />
         </div>
       </div>

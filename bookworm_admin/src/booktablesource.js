@@ -25,6 +25,7 @@ export const bookColumns = [
       headerName: "Category",
       width: 100,
     },
+    
     {
       field: "stock",
       headerName: "Stock",
@@ -69,4 +70,5 @@ export const bookColumns = [
     },
     
   ];
+  
   
