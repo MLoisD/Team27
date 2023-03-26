@@ -15,29 +15,28 @@ import lombok.NoArgsConstructor;
 
 
 
+
 @Entity
-//@Table (name = "book")
+@Table(name = "book")
 
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@Column(name = "BookID")
-    private long Bookid;
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    private Long id;
 
-    private long id = Bookid;
-
-     public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long Bookid) {
-		this.Bookid = Bookid;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    @Column(name = "BName") 
+    @Column(name = "BName")
     private String bname;
 
-     public String getBName() {
+    public String getBName() {
         return bname;
     }
 
@@ -45,9 +44,9 @@ public class Book {
         this.bname = bname;
     }
 
-    @Column(name = "Author") 
+    // @Column(name = "Author")
     private String author;
- 
+
     public String getAuthor() {
         return author;
     }
@@ -56,10 +55,10 @@ public class Book {
         this.author = author;
     }
 
-    @Column(name = "DatePub") 
+    // @Column(name = "DatePub")
     private Date datepub;
 
-     public Date getDateput() {
+    public Date getDateput() {
         return datepub;
     }
 
@@ -67,10 +66,10 @@ public class Book {
         this.datepub = datepub;
     }
 
-    @Column(name = "Genre") 
+    // @Column(name = "Genre")
     private String genre;
 
-     public String getGenre() {
+    public String getGenre() {
         return genre;
     }
 
@@ -78,10 +77,10 @@ public class Book {
         this.genre = genre;
     }
 
-    @Column(name = "AgeRate") 
+    // @Column(name = "AgeRate")
     private Integer agerate;
 
-     public Integer getAgerate() {
+    public Integer getAgerate() {
         return agerate;
     }
 
@@ -89,29 +88,23 @@ public class Book {
         this.agerate = agerate;
     }
 
-    @Lob
-    @Column(name = "Cover", length = Integer.MAX_VALUE, nullable = true) 
-    private byte[] cover;
+    private String stock;
 
-     public byte[] getCover() {
-        return cover;
+    public String getStock() {
+        return stock;
     }
 
-    public void setCover(byte[] cover) {
-        this.cover = cover;
-    } 
-
-   /*   public Blob getCover() {
-        return cover;
+    public void setStock(String stock) {
+        this.stock = stock;
     }
+  
 
-    public void setCover(Blob cover) {
-        this.cover = cover;
-    }  */
+    @Column
+    private String cover;
 
-     @Column(name = "Price")
+    // @Column(name = "Price")
     private Float price;
- 
+
     public Float getPrice() {
         return price;
     }
@@ -120,37 +113,70 @@ public class Book {
         this.price = price;
     }
 
-    @Column(name = "Description") 
+    // @Column(name = "Description")
     private String description;
 
-     public String getDescription() {
+    public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    } 
+    }
 
-    public Book(){
+
+    private String category_id;
+
+    public String getCategory_id() {
+		return category_id;
+	}
+	public void setCategory_id(String category_id) {
+		this.category_id = category_id;
+	}
+
+
+
+
+/* 
+    public Book() {
 
     }
 
-    public Book(Long id, String bookName, String author, Date datepublished, String genre, Integer agerate, Float price, String description) {
-        this.BookID= id;
+    public Book(Long id, String bookName, String author, Integer agerate, String cover, Date datepublished,
+            String description, String genre, Float price, String image, String stock) {
+        this.id = id;
         this.bname = bookName;
         this.author = author;
         this.agerate = agerate;
-        //this.cover = cover;
+        this.cover = cover; // filename is cover
         this.datepub = datepublished;
         this.genre = genre;
         this.price = price;
         this.description = description;
-    }
+        this.image = image;
+        this.stock = stock;
+      
+    } */
 
- /*    @Override
-	public String toString() {
-		return "Product [id=" + id + ", name=" + bname + ", Author=" + author + ", description=" + description + ", price=" + price + ", cover="
-				+ Arrays.toString(cover) + ", Date published=" + datepub + "]";
-	}
-   */
+  /*   public Book(String bookName, String author, Integer agerate, String cover, Date datepublished, String description,
+            String genre, Float price, String image, String stock) {
+        this.bname = bookName;
+        this.author = author;
+        this.agerate = agerate;
+        this.cover = cover;
+        this.datepub = datepublished;
+        this.genre = genre;
+        this.price = price;
+        this.description = description;
+        this.image = image;
+        this.stock = stock;
+    } */
+
+    
+      @Override
+      public String toString() {
+      return "Product [id=" + id + ", name=" + bname + ", Author=" + author + ", genre=" + genre
+       + ", description=" + description + ", price=" + price + ", Date published=" + datepub + "]";
+     }
+     
 }

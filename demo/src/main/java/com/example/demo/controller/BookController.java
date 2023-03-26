@@ -1,8 +1,11 @@
-package com.example.controller;
+package com.example.demo.controller;
 
-import com.example.entity.Book;
-import com.example.repository.BookRepository;
-import com.example.service.*;
+import com.example.demo.entity.Book;
+import com.example.demo.repository.BookRepository;
+import com.example.demo.exception.BookNotFoundException;
+import com.example.demo.repository.BookRepository;
+import com.example.demo.exception.BookNotFoundAdvice;
+import com.example.demo.service.*;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -24,37 +27,73 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:5000")
+
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1")
 public class BookController {
 	
+    @Autowired
+    private BookService bookService;
+
+    @Autowired
+    private BookRepository bookRepository;
 
 
-	@Autowired
-	private BookService bookService;
-	BookRepository bookRepository;
-
-	@GetMapping("/books")
+    
+    @GetMapping("/books")
     public ResponseEntity<List<Book>> getBooks(){
         return ResponseEntity.ok(bookService.getBooks());
     }
 
 
+    @PostMapping("/books")
+    public ResponseEntity<?> createBook(@RequestBody Book book) {
+        bookService.save(book);
+        return new ResponseEntity<>("Customer Created Successfully",HttpStatus.CREATED);
+    }
 
+
+    
+  @GetMapping
+  @ResponseStatus(code = HttpStatus.OK)
+  public List<Book> getAllFiles() {
+    return this.bookService.getBooks();
+  }
+
+   @GetMapping("/books/{id}")
+   Book getBookById(@PathVariable Long id){
+     return bookRepository.findById(id)
+     .orElseThrow(()->new BookNotFoundException(id));
+   }
+
+
+   
+ 
 
 }
+
+
+
+
+
+
+
+
 
 
 /* 	@GetMapping("book/display/{id}")

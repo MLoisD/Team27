@@ -1,8 +1,8 @@
-package com.example.serviceImpl;
+package com.example.demo.serviceImpl;
 
-import com.example.entity.Customer;
-import com.example.repository.CustomerRepository;
-import com.example.service.CustomerService;
+import com.example.demo.entity.Customer;
+import com.example.demo.repository.CustomerRepository;
+import com.example.demo.service.CustomerService;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.demo.controller;
 
 import java.util.List;
 
@@ -8,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelExtensionsKt;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.example.demo.entity.Basket;
+import com.example.demo.entity.Book;
+import com.example.demo.entity.Customer;
+import com.example.demo.service.BasketServices;
 
 /* import com.example.demo.service.CustomerService;
 
@@ -19,10 +23,7 @@ public class BasketController {
 
     @Autowired
     private CustomerService customerService; */
-import com.example.entity.Basket;
-import com.example.entity.Book;
-import com.example.entity.Customer;
-import com.example.service.BasketServices;
+
 
  /*  @GetMapping("/basket")
     public String showShoppingCart(Model model){

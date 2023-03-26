@@ -28,7 +28,7 @@ public class Basket {
     private Customer customer;
  
     private int Quantity;
-    private int id;
+
  
     public void setId(int id) {
         this.BasketID = id;
@@ -52,13 +52,13 @@ public class Basket {
         this.book = book;
     }
 
-    /* public Customer getCustomer() {
+   /*    public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    } */
+    }  */
 
      public int getCustomer() {
         return customer.getCustomerID();
@@ -67,7 +67,7 @@ public class Basket {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     } 
-
+ 
 
     public int getQuantity() {
         return Quantity;
@@ -84,6 +84,7 @@ public class Basket {
     public void setPrice(double price) {
         Price = price;
     }
+
 
 
 }

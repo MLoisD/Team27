@@ -1,5 +1,6 @@
-package com.example.entity;
+package com.example.demo.entity;
 
+import java.sql.Blob;
 import jakarta.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,15 +12,16 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
+
 @Entity
 @Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
-   // private Integer id;
+    private Integer id;
     
-    //@Column(name = "CustomerID") 
-    private Integer customerID;
+    @Column(name = "id") 
+    // private Integer customerID;
 
     /* public Integer getId() {
         return id;
@@ -30,11 +32,11 @@ public class Customer {
     }
  */
     public Integer getCustomerID() {
-        return customerID;
+        return id;
     }
 
-    public void setCustomerID(Integer customerID) {
-        this.customerID = customerID;
+    public void setCustomerID(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -70,6 +72,7 @@ public class Customer {
     }
 
 
+
     public Customer() {
     }
 
@@ -78,14 +81,16 @@ public class Customer {
         this.userpassword = userpassword;
         this.useremail = useremail;
         this.usertype = usertype;
+  
     }
 
-    public Customer(Integer customerID, String username, String userpassword, String useremail, String usertype) {
-        this.customerID = customerID;
+    public Customer(Integer id, String username, String userpassword, String useremail, String usertype) {
+        this.id = id;
         this.username = username;
         this.userpassword = userpassword;
         this.useremail = useremail;
         this.usertype = usertype;
+ 
 
     }
 
@@ -100,6 +105,7 @@ public class Customer {
 
     //@Column(name = "userType") 
     private String usertype;
+
 
 }
 

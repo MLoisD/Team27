@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.demo.service;
 
 import java.util.List;
 
@@ -7,15 +7,13 @@ import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authenticati
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.entity.Customer;
-import com.example.repository.CustomerRepository;
+import com.example.demo.entity.Customer;
+import com.example.demo.repository.CustomerRepository;
 
 
 public interface CustomerService {
+
     Customer save(Customer customer);
-    
-
     List<Customer> getCustomers();
-
 
 }
