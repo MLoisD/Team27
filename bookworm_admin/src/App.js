@@ -10,11 +10,21 @@ import User from "./pages/user/User";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
-import { useContext } from "react";
+import "./index.scss"
+import {useContext, useEffect} from "react";
 import { DarkModeContext } from "./context/darkModeContext";
+import OrderSummary from "./pages/orderSummary/OrderSummary";
+import useInitApp from "./components/hooks/useInitApp";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
+
+  const { initialSetData } = useInitApp();
+
+  useEffect(() => {
+    initialSetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   
   return (
@@ -33,11 +43,12 @@ function App() {
             </Route>
             <Route path="books">
               <Route index element={<Booklist />} />
-              <Route path=":bookId" element={<Booksingle/>} />
+              <Route path=":bookId" element={<Orders/>} />
               <Route path="new" element={<New inputs={productInputs} title="Add New Book" />}/>
             </Route>
             <Route path="orders">
-              <Route index element={<Orders />} />
+              <Route index element={<Booksingle/>} />
+              <Route path=":orderSummary" element={<OrderSummary />}/>
             </Route>
           </Route>
         </Routes>
