@@ -17,7 +17,7 @@ import com.t27.inventoryapp.model.Book;
 import java.util.*;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins =  {"http://localhost:3000", "http://localhost:8080"}, allowCredentials = "true", maxAge = 3600)
 @RequestMapping("/book")
 public class BookController {
 

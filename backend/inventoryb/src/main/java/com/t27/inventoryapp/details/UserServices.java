@@ -1,18 +1,13 @@
-package com.t27.inventoryapp.services;
+package com.t27.inventoryapp.details;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.t27.inventoryapp.details.UserDetailsImpl;
 import com.t27.inventoryapp.model.*;
 import com.t27.inventoryapp.repository.*;
 
-@Service
-@Transactional
 public class UserServices implements UserDetailsService{
     
     @Autowired
@@ -29,4 +24,6 @@ public class UserServices implements UserDetailsService{
         }
         return new UserDetailsImpl(user);
     }
+
+
 }

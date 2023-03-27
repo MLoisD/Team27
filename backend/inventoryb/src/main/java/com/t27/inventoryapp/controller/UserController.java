@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -30,9 +29,10 @@ import com.t27.inventoryapp.model.Role;
 import com.t27.inventoryapp.model.User;
 import com.t27.inventoryapp.repository.RoleRepository;
 import com.t27.inventoryapp.repository.UserRepository;
+import com.t27.inventoryapp.request.LoginRequest;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins =  {"http://localhost:3000", "http://localhost:8080"}, allowCredentials = "true", maxAge = 3600)
 @RequestMapping("/user")
 public class UserController {
 
@@ -56,7 +56,7 @@ public class UserController {
     public ResponseEntity<String> logout(@CurrentSecurityContext(expression = "authenticated.name") String username) {
         System.out.println(username);
         SecurityContextHolder.getContext().setAuthentication(null);
-        return new ResponseEntity<>("See you later", HttpStatus.OK);
+        return new ResponseEntity<>("GoodBye", HttpStatus.OK);
     }
 
     @GetMapping("/register")
@@ -109,7 +109,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserDetails> login(@RequestBody User user) throws AuthenticationException {
+    public ResponseEntity<UserDetails> login(@RequestBody LoginRequest user) throws AuthenticationException {
         System.out.println(user);
         User loggedUser = userRepo.getUserByUsername(user.getUsername());
 
