@@ -4,8 +4,6 @@ import GroupRoundedIcon from '@mui/icons-material/GroupRounded';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
-import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsActiveRounded';
-import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import AssignmentIndRoundedIcon from '@mui/icons-material/AssignmentIndRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import { Link } from "react-router-dom";
@@ -61,18 +59,11 @@ const Sidebar = () => {
           </li>
           </Link>
           <Link to="/" style={{ textDecoration: "none", color: "grey" }}>
-          <li>
-            <NotificationsActiveRoundedIcon className="icon"/>
-            <span>NOTIFICATIONS</span>
-          </li>
+
           </Link>
-          <p className="title">SERVICE</p>
-         
+
           <Link to="/" style={{ textDecoration: "none", color: "grey" }}>
-          <li>
-            <SettingsRoundedIcon className="icon"/>
-            <span>SETTINGS</span>
-          </li>
+
           </Link>
           <p className="title">USER </p>
           <Link to="/user" style={{ textDecoration: "none", color: "grey" }}>
