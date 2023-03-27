@@ -18,9 +18,9 @@ const Navbar = () => {
           <div className="item">
             <DarkModeOutlinedIcon className="icon" onClick={() => dispatch({ type: "TOGGLE" })}/>
           </div>
-          <Link to="/user" style={{ textDecoration: "none" }}>
-          <div className="item">
-           <PersonOutlineIcon/>
+          <Link to="/user" >
+          <div className="item" >
+           <PersonOutlineIcon  className="icon"/>
           </div>
           </Link>
         </div>

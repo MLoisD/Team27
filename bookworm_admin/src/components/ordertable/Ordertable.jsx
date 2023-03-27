@@ -15,7 +15,7 @@ const Ordertable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/books/test" style={{ textDecoration: "none" }}>
+            <Link to="/summary" style={{ textDecoration: "none" }}>
               <div className="viewButton">Order Fulfilment</div>
             </Link>
           </div>

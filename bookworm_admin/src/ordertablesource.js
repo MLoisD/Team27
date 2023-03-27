@@ -1,19 +1,5 @@
 export const orderColumns = [
-    { field: "id", headerName: " Tracking ID", width: 100 },
-    {
-      field: "bookname",
-      headerName: "Title",
-      width: 230,
-      renderCell: (params) => {
-        return (
-          <div className="cellWithImg">
-            <img className="cellImg" src={params.row.img} alt="avatar" />
-            {params.row.bookname}
-          </div>
-        );
-      },
-      
-    },
+    { field: "id", headerName: " Order ID", width: 100 },
     {
       field: "customer",
       headerName: "Customer",
