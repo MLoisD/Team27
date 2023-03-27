@@ -37,7 +37,7 @@ export default function EditBook() {
     };
 
     const loadBooks = async () => { 
-        const result = await axios.get(`http://localhost:8080/book/bookList/${bookID}`)
+        const result = await axios.get(`http://localhost:8080/bookList/${bookID}`)
         setBook(result.data)
     }
     return (
