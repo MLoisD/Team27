@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-InventorybApplication<inventoryb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.t27.inventoryapp.InventorybApplication",
+            "projectName": "inventoryb",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
