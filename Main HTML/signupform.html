@@ -1,0 +1,184 @@
+<form action="action_page.php">
+
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      nav {
+        background-color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        color: #FFFFFF;
+      }
+
+      nav a {
+        color: #FFFFFF;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      /*
+    *{
+      padding: 16px;
+      margin-top: 50px;
+      background-color: #ccfccb;
+      border-radius: 5px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px 0 #ace1af;
+    }
+    */
+
+      /* Add styles to the form headings */
+      h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      p {
+        text-align: center;
+        font-size: 16px;
+      }
+
+      /* Add styles to the form labels */
+      label {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      /* Add styles to the form input fields */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccfccb;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      /* Add styles to the form checkbox options */
+      .checkbox_option {
+        margin-bottom: 20px;
+      }
+
+      /* Add styles to the form checkbox labels */
+      .checkbox_option label {
+        display: inline;
+        font-weight: normal;
+      }
+
+      /* Add styles to the form submit buttons */
+      .cancelbtn,
+      .signupbtn {
+        float: left;
+        width: 50%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      /* Add styles to the form cancel button */
+      .cancelbtn {
+        background-color: #568259;
+      }
+
+      .cancelbtn:hover {
+        background-color: #bfbfbf;
+      }
+
+      /* Add styles to the form signup button */
+      .signupbtn {
+        background-color: #CCFCCB;
+        color: white;
+      }
+
+      .signupbtn:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+</form>
+
+<body>
+
+  <nav>
+    <div class="logo">My Website</div>
+    <div>
+      <a href="signupform.html">login/sign-up</a></li>
+      <a href="products.html">Store Page</a></li>
+      <a href="about.html">About Us</a></li>
+      <a href="contact-us.html">Contact us</a></li>
+      <a href="#services">Reviews</a></li>
+      <a href="#contact">extra</a></li>
+    </div>
+  </nav>
+
+  <div class="container">
+    <img src="C:\Users\qilya\Desktop\bookworms logo.png" alt="bookworms_logo"
+      style="display: block;margin-left: auto; margin-right: auto;" width="400" height="200" />
+
+    <h1>Sign Up</h1>
+    <p>Member Signup Form.</p>
+    <hr>
+
+    <label for="first name"><b>First Name</b></label>
+    <input type="First Name" placeholder="First Name" name="first name" required>
+
+    <label for="last name"><b>Last Name</b></label>
+    <input type="Last Name" placeholder="Last Name" name="last name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-confirm"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="psw-confirm" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+    <div class="input_field checkbox_option">
+      <input type="checkbox" id="cb1">
+      <label for="cb1">I agree with the <a href="#" style="color:dodgerblue">Terms Of Use</a></label>
+
+    </div>
+
+    <div class="input_field checkbox_option">
+      <input type="checkbox" id="cb2">
+      <label for="cb2">I want to receive the newsletter</a></label>
+
+    </div>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+  </form>
+
+  <footer style="background-color: #333; color: #fff; padding: 1em;">
+    <p>Copyright &copy; 2023</p>
+  </footer>
+
+</body>
