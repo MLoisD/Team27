@@ -63,7 +63,7 @@ public class WebSecurityConfiguration {
                 .requestMatchers("/**").permitAll()
                 .requestMatchers("/user/login").permitAll()
                 .requestMatchers("/user/register").permitAll()
-                .requestMatchers("/book/").permitAll()
+                .requestMatchers("/book").permitAll()
                 .requestMatchers("/book/**").permitAll()
                 .requestMatchers("/book/addBook").hasRole("ADMIN")
                 .requestMatchers("/book/updateBookStock/{bookID}").hasRole("ADMIN")
