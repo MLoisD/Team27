@@ -1,0 +1,237 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cartItem {
+    width: 700px;
+    height: 250px;
+    display: flex;
+  
+    align-items: center;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    margin: 30px;
+  }
+  
+  .cartItem img {
+    width: 200px;
+  }
+  
+  .cartItem .description {
+    width: 100%;
+    font-size: 30px;
+  }
+  
+  .countHandler input {
+    width: 40px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  .checkout-button {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer; 
+    margin-left: 0%;
+
+  }
+
+  
+.container {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+  }
+  
+  .progress-container::before {
+    content: ""; /* Mandatory with ::before */
+    background-color:white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color:black;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease;
+  }
+  
+  .circle {
+    background-color: #fff;
+    color: #191414;
+    border-radius: 50%;
+    height: 55px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: 0.4s ease;
+  }
+  
+  .circle.active {
+    border-color: var(--line-border-fill);
+    background-color: #91beef;
+  }
+  .btn {
+    background-color:rgb(175, 241, 175);
+    color: #050202;
+    border: 0;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin-right: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    float: left;
+  
+    margin-top: 5px;
+    
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  .btn:focus {
+    outline: 0;
+  }
+  
+  .btn:disabled {
+    background-color: green;
+    cursor: not-allowed;
+  }
+  
+
+  .leftcolumn {   
+    float: left;
+    width: 100%;
+  
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: right;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+
+  .column {
+    float: left;
+    }
+
+    /* Set width length for the left, right and middle columns */
+    .left {
+    width: 25%;
+    text-align: left;
+    }
+
+    .middle {
+    width: 30%;
+    }
+
+    .quantity {
+    width: 10%;
+    }
+
+    
+    .right {
+    width: 30%;
+    float: right;
+    text-align: right;
+
+    }
+
+
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .row{
+      background-color: white;
+      width:73%;
+      float:left;
+      text-align: center;
+  
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0px;
+    }
+  }
+
+  .back{
+    background-color:rgb(210, 219, 210);
+    color: #000000;
+    border: 0;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin-right: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    float: left;
+  
+    margin-top: 5px;
+    
+  }
+
+  
+
+  
+
+  
+  .responsive-image {
+    width: 60%;
+    height: auto;
+  }
+  
+  
