@@ -28,7 +28,7 @@ function App() {
                 <Route index element={<Users />} />
                 <Route path=":userId" element={<Single />} />
                 <Route
-                    path="new" element={<New inputs={userInputs} title="Add New User" />}/>
+                    path="new" element={<Edit inputs={userInputs} title="Add Edit User" />}/>
               </Route>
                 <Route exact path="books" element={<Booklist />}/>
                 <Route exact path="books/:bookId" element={<BookSingle/>} />

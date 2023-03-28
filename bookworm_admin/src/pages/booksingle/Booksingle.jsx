@@ -35,7 +35,7 @@ export const BookSingle = (props) => {
                 <Navbar />
                 <div className="top">
                     <div className="left">
-                        <div className="editButton">EDIT</div>
+                        <Button className="editButton" onClick={handleClick}>EDIT</Button>
                         <h1 className="title">BOOK INFORMATION</h1>
                         { bookMap.map((item, key)  =>
                         <div className="item" key={item.id}>

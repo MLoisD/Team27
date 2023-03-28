@@ -37,9 +37,9 @@
           gap: 20px;
 
           .itemImg {
-            width: 100px;
-            height: 100px;
-            
+            height:200px;
+            width: auto;
+            object-fit: fill;
           }
 
           .details {

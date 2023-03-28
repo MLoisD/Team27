@@ -105,7 +105,7 @@ const EditUserForm = (props) => {
                             variant="contained"
                             color="#568259"
                         >
-                            {props.editing ? " Update user" : "Add new user"}
+                            {props.editing ? " Update user" : "Add edit user"}
                         </Button>
                     </Grid>
                     <Grid item xs>
