@@ -2,8 +2,8 @@ import Home from "./pages/home/Home";
 import Users from "./pages/users/Users";
 import Booklist from "./pages/booklist/Booklist";
 import Single from "./pages/single/Single";
-import Booksingle from "./pages/booksingle/Booksingle";
-import New from "./pages/new/New";
+import {BookSingle} from "./pages/booksingle/Booksingle";
+import Edit from "./pages/edit/Edit";
 import Orders from "./pages/orders/Orders";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
@@ -30,11 +30,9 @@ function App() {
                 <Route
                     path="new" element={<New inputs={userInputs} title="Add New User" />}/>
               </Route>
-              <Route path="books">
-                <Route index element={<Booklist />} />
-                <Route path=":bookId" element={<Booksingle/>} />
-                <Route path="new" element={<New inputs={productInputs} title="Add New Book" />}/>
-              </Route>
+                <Route exact path="books" element={<Booklist />}/>
+                <Route exact path="books/:bookId" element={<BookSingle/>} />
+                <Route exact path="books/:bookId/edit/:id" element={<Edit inputs={productInputs} title="Add Edit Book" />}/>
               <Route path="orders">
                 <Route index element={<Orders/>} />
               </Route>

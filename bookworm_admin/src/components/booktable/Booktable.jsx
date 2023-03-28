@@ -1,7 +1,7 @@
 import "./booktable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { bookColumns, bookRows } from "../../datatablesource";
-import { Link } from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import { useState } from "react";
 
 const Booktable = () => {
@@ -11,6 +11,12 @@ const Booktable = () => {
     setData(data.filter((item) => item.id !== id));
   };
 
+  const setId = (params) => {
+     const dataArray = data.filter((item) => item.id === params.row.id);
+     const id  = dataArray.map((item)  => item.id)
+      return id
+  }
+
   const actionColumn = [
     {
       field: "action",
@@ -19,7 +25,7 @@ const Booktable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/books/test" style={{ textDecoration: "none" }}>
+            <Link to={`${setId(params)}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
