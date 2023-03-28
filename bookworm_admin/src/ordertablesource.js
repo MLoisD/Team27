@@ -19,8 +19,8 @@ export const orderColumns = [
         },
     },
     {
-      field: "amount",
-      headerName: "Amount",
+      field: "items",
+      headerName: "Items",
       width: 160,
       renderCell: (params) => {
         return (
@@ -30,18 +30,7 @@ export const orderColumns = [
         );
       },
     },
-    {
-      field: "stock",
-      headerName: "Available Stock",
-      width: 160,
-      renderCell: (params) => {
-        return (
-          <div className={`cellWithStatus ${params.row.stock}`}>
-            {params.row.stock}
-          </div>
-        );
-      },
-    },
+
   ];
   
   //temporary data
@@ -52,7 +41,7 @@ export const orderColumns = [
       img: "https://cdn.waterstones.com/bookjackets/large/9780/1419/9780141988511.jpg",
       customer: "Jane Doe",
       amount: "2",
-      status: "Approved",
+      status: "Declined",
       stock: "63"
       
     },
@@ -62,8 +51,8 @@ export const orderColumns = [
       bookname: "Atomic Habits",
       img: "https://cdn.waterstones.com/override/v1/large/9781/8479/9781847941831.jpg",
       customer: "Jane Doe",
-      amount: "1",
-      status: "Approved",
+      amount: "3",
+      status: "Fulfiled",
       stock: "35"
 
     },

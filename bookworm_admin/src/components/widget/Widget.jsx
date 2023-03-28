@@ -9,7 +9,7 @@ const Widget = ({ type }) => {
   let data;
 
   //Temporary before data connection
-  const amount = 100;
+  const amount = ["1", "3","100"];
   const diff = 20;
 
   switch (type) {
@@ -18,6 +18,7 @@ const Widget = ({ type }) => {
         title: "USERS",
         isMoney: false,
         link: "See all users",
+        value: 1,
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -34,6 +35,7 @@ const Widget = ({ type }) => {
         title: "ORDERS",
         isMoney: false,
         link: "View all orders",
+        value: 3,
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -50,6 +52,7 @@ const Widget = ({ type }) => {
         title: "EARNINGS",
         isMoney: true,
         link: "View net earnings",
+        value: 52.97,
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -63,6 +66,7 @@ const Widget = ({ type }) => {
         title: "BALANCE",
         isMoney: true,
         link: "See details",
+        value: 70.99,
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"
@@ -83,7 +87,7 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.isMoney && "$"} {data.value}
         </span>
         <span className="link">{data.link}</span>
       </div>
