@@ -1,5 +1,7 @@
 import React from "react";
-// import { makeStyles } from "@material-ui/core/styles";
+import "./usertable.scss";
+import { makeStyles } from "@material-ui/core/styles";
+
 import {
     Paper,
     Table,
@@ -11,24 +13,34 @@ import {
     Button
 } from "@material-ui/core";
 
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         flexGrow: 1
-//     },
-//     table: {
-//         minWidth: 500
-//     },
-//     paper: {
-//         padding: theme.spacing(5),
-//         textAlign: "center",
-//         color: theme.palette.text.secondary
-//     }
-// }));
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        fontSize: '200pt',
+        flexGrow: 1
+    },
+    typography: {
+        // In Chinese and Japanese the characters are usually larger,
+        // so a smaller fontsize may be appropriate.
+        fontFamily: 'Raleway, Arial',
+        fontSize: 12,
+    },
+    table: {
+        minWidth: 500,
+       fontSize: "10px" ,
+    },
+    paper: {
+        padding: theme.spacing(5),
+        textAlign: "center",
+        color: theme.palette.text.secondary
+
+    }
+}));
 const UserTable = (props) => {
- //   const classes = useStyles();
+    const classes = useStyles();
     return (
-        <TableContainer component={Paper}>
-            <Table className="userTable" aria-label="simple table">
+        <TableContainer className={classes.root} component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>ID</TableCell>
@@ -41,7 +53,7 @@ const UserTable = (props) => {
                         <TableCell align="right">ACTION</TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody className="usertableTitle">
                     {props.users.map((row) => (
                         <TableRow key={row.id}>
                             <TableCell component="th" scope="row">

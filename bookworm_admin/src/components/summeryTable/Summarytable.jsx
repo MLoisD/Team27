@@ -12,7 +12,7 @@ const Summarytable = () => {
     return (
         <div className="summarytable">
             <div className="summaryTitle">
-                ORDER (Insert ID) SUMMARY
+                ORDER 9257934 SUMMARY
                 <Link to="" className="link">
                     FULFIL
                 </Link><Link to="" className="link1">

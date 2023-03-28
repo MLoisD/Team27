@@ -6,7 +6,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar"
 const Home = () => {
     const usersData = [
-        { id: 1, firstName: "John", lastName: "Jackson" , username:"johnjackson", email:"johnjackson@gmail.com", phone: "07912345678", address: "Aston ST, Birmingham, B4 7ET"},
+        { id: 1, firstName: "John", lastName: "Jackson" , username:"Johnjackson", email:"Johnjackson@gmail.com", phone: "07912345678", address: "Aston ST, Birmingham, B4 7ET"},
 
     ];
 

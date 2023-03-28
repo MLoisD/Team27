@@ -1,47 +1,5 @@
 
-export const userInputs = [
-    {
-      id: 1,
-      label: "Username",
-      type: "text",
-      placeholder: "john_doe",
-    },
-    {
-      id: 2,
-      label: "Name and surname",
-      type: "text",
-      placeholder: "John Doe",
-    },
-    {
-      id: 3,
-      label: "Email",
-      type: "mail",
-      placeholder: "john_doe@gmail.com",
-    },
-    {
-      id: 4,
-      label: "Phone",
-      type: "text",
-      placeholder: "+1 234 567 89",
-    },
-    {
-      id: 5,
-      label: "Password",
-      type: "password",
-    },
-    {
-      id: 6,
-      label: "Address",
-      type: "text",
-      placeholder: "Aston St, Birmingham B4 7ET",
-    },
-    {
-      id: 7,
-      label: "Country",
-      type: "text",
-      placeholder: "UK",
-    },
-  ];
+
   
   export const productInputs = [
     {
@@ -77,14 +35,14 @@ export const userInputs = [
     {
       id: 6,
       label: "Stock",
-      type: "text", 
+      type: "text",
       placeholder: "Stock Amount",
     },
     {
       id: 7,
       label: "Age Rate",
       type: "text",
-      placeholder: "£19.99",
+      placeholder: "PG13",
     },
     {
       id: 8,
@@ -96,7 +54,7 @@ export const userInputs = [
       id: 9,
       label: "Date Publised",
       type: "date",
-      placeholder: "£19.99",
+      placeholder: "",
     },
     {
       id: 10,
@@ -104,6 +62,5 @@ export const userInputs = [
       type: "text",
       placeholder: "£19.99",
     },
- 
+
   ];
-  

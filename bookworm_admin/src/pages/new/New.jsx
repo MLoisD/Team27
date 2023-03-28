@@ -5,7 +5,9 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 import { useState } from "react";
 
 const New = ({ inputs, title }) => {
-    const [file, setFile] = useState("");
+
+
+    const [file, setFile] = useState();
 
     return (
         <div className="new">
@@ -13,7 +15,7 @@ const New = ({ inputs, title }) => {
             <div className="newContainer">
                 <Navbar />
                 <div className="top">
-                    <h1>{title}</h1>
+                    <h1>ADD NEW BOOK</h1>
                 </div>
                 <div className="bottom">
                     <div className="left">

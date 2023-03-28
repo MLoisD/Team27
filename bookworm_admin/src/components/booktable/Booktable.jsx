@@ -11,6 +11,8 @@ const Booktable = () => {
     setData(data.filter((item) => item.id !== id));
   };
 
+
+
   const setId = (params) => {
      const dataArray = data.filter((item) => item.id === params.row.id);
      const id  = dataArray.map((item)  => item.id)
@@ -43,7 +45,7 @@ const Booktable = () => {
     <div className="booktable">
       <div className="booktableTitle">
         BOOKS
-        <Link to="/books/new" className="link">
+        <Link to="/new" className="link">
           Add New
         </Link>
       </div>
