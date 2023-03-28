@@ -1,3 +1,0 @@
-Note from Mosinmiloluwa Davids (Lois):
-Please note that all reference that used Bootstrap were replaced with code written by the other teammembers
-All CSS styling and HTML pages that were generated in Bootstrap were placeholders during testing
