@@ -21,17 +21,17 @@ export const bookColumns = [
     },
 
     {
+      field: "genre",
+      headerName: "Category",
+      width: 100,
+    },
+
+    {
       field: "price",
       headerName: "Price",
       width: 100,
     },
 
-    {
-      field: "genre",
-      headerName: "Category",
-      width: 100,
-    },
-    
     {
       field: "stock",
       headerName: "Stock",
@@ -52,7 +52,7 @@ export const bookColumns = [
       id: 6789,
       bookname: "12 Rules for Life",
       img: "https://cdn.waterstones.com/bookjackets/large/9780/1419/9780141988511.jpg",
-      price: 19.99,
+      price: "19.99",
       stock: "63",
       author: "Jordan B. Peterson",
       genre: "Philosophy",
@@ -63,7 +63,7 @@ export const bookColumns = [
       bookname: "Atomic Habits",
       img: "https://cdn.waterstones.com/override/v1/large/9781/8479/9781847941831.jpg",
       stock: "35",
-      price: 19.99,
+      price: "19.99",
       author: "James Clear",
       genre: "Self Help",
     },
@@ -74,7 +74,7 @@ export const bookColumns = [
       img: "https://cdn.waterstones.com/bookjackets/large/9780/8575/9780857504791.jpg",
       stock: "249",
       author: "Prince Harry",
-      price: 12.99,
+      price: "12.99",
       genre: "Biography",
     },
     
