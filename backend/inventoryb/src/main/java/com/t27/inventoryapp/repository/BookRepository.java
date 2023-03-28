@@ -12,6 +12,6 @@ import com.t27.inventoryapp.model.Book;
 public interface BookRepository extends JpaRepository<Book,Long>{
     Optional<Book> findById(Long id);
 
-    @Query("Select pro FROM Book pro WHERE pro.category_id=:cat_id")
+    @Query("Select book FROM Book book WHERE book.category_id=:cat_id")
 	List<Book> getByCategoryId(@Param("cat_id")String cat_id);
 }

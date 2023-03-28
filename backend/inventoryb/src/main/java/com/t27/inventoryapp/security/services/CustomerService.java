@@ -14,9 +14,9 @@ import com.t27.inventoryapp.repository.UserRepository;
 public interface CustomerService {
 
 
-    Customer save(Customer customer);
-    List<Customer> getCustomers();
-    public Customer saveCustomer(Customer customer);
-    public Integer isCustomerPresent(Customer customer);
+    User save(User User);
+    List<User> getUsers();
+    public User saveUser(User customer);
+    public Integer isCustomerPresent(User customer);
 
 }  

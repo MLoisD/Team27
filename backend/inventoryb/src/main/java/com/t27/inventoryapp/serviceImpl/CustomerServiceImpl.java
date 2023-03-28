@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public Integer isCustomerPresent(User customer){
-        User customer1 = customerRepository.getCustomerByUseremailAndUsername(customer.getUseremail(),customer.getUsername());
+        User customer1 = customerRepository.getCustomerByEmailAndUsername(customer.getUseremail(),customer.getUsername());
         return customer1!=null ? customer1.getId().intValue(): null ;
     }
 

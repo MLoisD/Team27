@@ -10,6 +10,6 @@ import com.t27.inventoryapp.model.*;
 @Repository
 public interface BasketRepository extends JpaRepository<Basket, Integer> {
     
-    public List<Basket> findByCustomer(User customer);
+    public List<Basket> findByUser(User customer);
 }
  

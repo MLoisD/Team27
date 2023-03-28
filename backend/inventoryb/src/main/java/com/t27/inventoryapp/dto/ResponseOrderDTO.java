@@ -1,4 +1,4 @@
-package com.example.dto;
+package com.t27.inventoryapp.dto;
 
 
 import java.time.LocalDateTime;
