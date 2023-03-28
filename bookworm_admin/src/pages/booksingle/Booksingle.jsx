@@ -47,7 +47,7 @@ export const BookSingle = (props) => {
                             <div className="details">
                                 <h1 className="itemTitle">{item.bookname}</h1>
                                 <div className="detailItem">
-                                    <span className="itemKey">Author:</span>
+                                    <span className="itemKey">AUTHOR:</span>
                                     <span className="itemValue">{item.author}</span>
                                 </div>
                                 <div className="detailItem">
@@ -55,11 +55,11 @@ export const BookSingle = (props) => {
                                     <span className="itemValue">{item.id}</span>
                                 </div>
                                 <div className="detailItem">
-                                    <span className="itemKey">Category:</span>
-                                    <div id="description">{item.genre}</div>
+                                    <span className="itemKey">CATEGORY:</span>
+                                    <span className="itemValue">{item.genre}</span>
                                 </div>
                                 <div className="detailItem">
-                                    <span className="itemKey">Stock:</span>
+                                    <span className="itemKey">STOCK:</span>
                                     <span className="itemValue">{item.stock}</span>
                                 </div>
                             </div>

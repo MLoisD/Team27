@@ -4,6 +4,7 @@ import Booklist from "./pages/booklist/Booklist";
 import Single from "./pages/single/Single";
 import {BookSingle} from "./pages/booksingle/Booksingle";
 import Edit from "./pages/edit/Edit";
+import New from "./pages/new/New"
 import Orders from "./pages/orders/Orders";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
@@ -12,6 +13,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import User from "./pages/user/User";
 import OrderSummary from "./pages/ordersSummary/OrderSummary";
+
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -32,7 +34,8 @@ function App() {
               </Route>
                 <Route exact path="books" element={<Booklist />}/>
                 <Route exact path="books/:bookId" element={<BookSingle/>} />
-                <Route exact path="books/:bookId/edit/:id" element={<Edit inputs={productInputs} title="Add Edit Book" />}/>
+                <Route path="new" element={<New inputs={productInputs} title="Add New Product" />}/>
+                <Route exact path="books/:bookId/edit/:id" element={<Edit inputs={productInputs} title="EDIT BOOK" />}/>
               <Route path="orders">
                 <Route index element={<Orders/>} />
               </Route>

@@ -109,16 +109,16 @@ const Edit = ({ inputs, title }) => {
                       <label>ID</label>
                       <input type="text" value={valId ? valId : item.id} placeholder={item.id} onChange={handleChangeId}/>
 
-                      <label>Book Name</label>
+                      <label>TITLE</label>
                       <input type="text" value={bookname ?  bookname : "" } placeholder={ item.bookname } onChange={handleChangebookname} />
 
-                      <label>Author</label>
+                      <label>AUTHOR</label>
                       <input type="text" value={author ? author : ""} placeholder={item.author} onChange={handleChangeauthor}/>
 
-                      <label>Stock</label>
+                      <label>STOCK</label>
                       <input type="text"  value={stock ? stock : ""} placeholder={item.stock} onChange={handleChangestock}/>
 
-                      <label>Genre</label>
+                      <label>GENRE</label>
                       <input type="text"  value={genre ? genre : ""} placeholder={item.genre} onChange={handleChangegenre}/>
                     </div>
               </form>
