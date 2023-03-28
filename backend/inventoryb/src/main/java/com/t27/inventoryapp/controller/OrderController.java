@@ -1,5 +1,5 @@
 package com.t27.inventoryapp.controller;
-
+/*
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -24,3 +24,5 @@ public class OrderController {
         return "basket here";
     }
 }
+ */
+
