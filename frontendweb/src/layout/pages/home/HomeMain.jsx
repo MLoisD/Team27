@@ -29,15 +29,15 @@ function HomeMain() {
 
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="./HomepageC1.jpg" alt="Event 3" ></img>
+                                <img src="/images/HomepageC1.jpg" alt="Event 3" ></img>
                             </div>
 
                             <div class="item">
-                                <img src="./HomepageC2.jpg" alt="Event 1" ></img>
+                                <img src="/images/HomepageC2.jpg" alt="Event 1" ></img>
                             </div>
 
                             <div class="item">
-                                <img src="./HomepageC3.jpg" alt="Event 2" ></img>
+                                <img src="/images/HomepageC3.jpg" alt="Event 2" ></img>
                             </div>
                         </div>
 

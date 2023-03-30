@@ -1,20 +1,19 @@
-package com.t27.inventoryapp.request;
+package com.t27.inventoryapp.controller;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
-    
 
+public class AuthenticationRequest {
     private String email;
-
-	String password;
-
-
+    private String username;
+    String password;
+    String role;    
 }
+

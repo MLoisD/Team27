@@ -7,6 +7,8 @@ package com.t27.inventoryapp.model;
 import java.util.*;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -19,14 +21,22 @@ import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
     @Table(name= "users", uniqueConstraints ={
         @UniqueConstraint(columnNames = "username"),
         @UniqueConstraint(columnNames = "email")
     })
     
-public class User{
+public class User {
     
     //adding @notblank makes sure that there are no valid inputs that contain 'null'
     // that was an issue I faced during the prototype run
@@ -43,6 +53,11 @@ public class User{
     @Size(max = 100)
     @Email
     private String email;
+
+
+
+    @Enumerated(EnumType.STRING)
+    private NewRole role;
 
     @NotBlank
     @Size(max = 100)
@@ -71,6 +86,7 @@ public class User{
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = NewRole.USER;
     }
 
     public User(){}

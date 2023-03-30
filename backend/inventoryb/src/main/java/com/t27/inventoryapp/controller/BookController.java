@@ -22,7 +22,7 @@ import com.t27.inventoryapp.model.Category;
 
 import java.util.*;
 
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin(origins =  {"http://localhost:3000", "http://localhost:8080"}, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/v1")
 public class BookController {
