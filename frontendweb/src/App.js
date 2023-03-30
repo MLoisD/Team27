@@ -10,7 +10,7 @@ import AboutUs from "./layout/pages/about us/AboutUs";
 import InventoryHome from "./layout/pages/adminside/admincrud/InventoryHome";
 import AddBook from "./layout/pages/adminside/admincrud/AddBook";
 import EditBook from "./layout/pages/adminside/admincrud/EditBook";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { atom, useAtom } from "jotai";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
@@ -18,6 +18,8 @@ import axios from "axios";
 import Logout from "./layout/pages/logout/Logout";
 import PrivateRoute from "./layout/pages/validate/PrivateRoute";
 import AdminPrivateRoute from "./layout/pages/validate/AdminPrivateRoute";
+import MainLayoutRoutes from "./MainLayuotRoutes";
+import AdminLayoutRoutes from "./AdminLayoutRoutes";
 
 export const LoggedAtom = atom(false);
 
@@ -51,21 +53,13 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route exact path="/products" element={<AdminPrivateRoute><ProductsAll /></AdminPrivateRoute>} />
-          <Route exact path="/" element={<HomeMain />} />
-          <Route exact path="/aboutus" element={<AboutUs />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/contactus" element={<ContactUs />} />
-          <Route exact path="/book/updateBook/:bookID" element={<EditBook />} />
-          <Route exact path="/book/addBook" element={<AddBook />} />
-          <Route exact path="/admin" element={<InventoryHome />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/logout" element={<Logout />} />
-        </Routes>
-      </Router>
+
+
+      <Routes> 
+        <Route path="/admin/*" element={<AdminPrivateRoute> <AdminLayoutRoutes /></AdminPrivateRoute>} />
+        <Route path="*" element={<MainLayoutRoutes />} />
+        
+      </Routes>
     </div>
   );
 }
