@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './common.css'
+
 const Navigation = () => {
     return (
         <Navbar bg="light" expand="lg">

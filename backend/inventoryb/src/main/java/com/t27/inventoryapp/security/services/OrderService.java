@@ -37,15 +37,15 @@ public class OrderService {
             Optional<Book> product = bookRepository.findById(productId);
             if (product.isPresent()) {
                 Book product1 = product.get();
-                if (product1.getStockNum() < cart.getQuantity()) {
-                    singleCartAmount = product1.getPrice() * product1.getStockNum();
-                    cart.setQuantity(product1.getStockNum());
+                if (product1.getStock() < cart.getQuantity()) {
+                    singleCartAmount = product1.getPrice() * product1.getStock();
+                    cart.setQuantity(product1.getStock());
                 } else {
                     singleCartAmount = cart.getQuantity() * product1.getPrice();
-                    stock = product1.getStockNum() - cart.getQuantity();
+                    stock = product1.getStock() - cart.getQuantity();
                 }
                 totalCartAmount = totalCartAmount + singleCartAmount;
-                product1.setStockNum(stock);
+                product1.setStock(stock);
                 stock=0;
                 cart.setProductName(product1.getBName());
                 cart.setAmount(singleCartAmount);

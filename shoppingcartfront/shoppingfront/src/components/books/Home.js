@@ -22,7 +22,7 @@ export default function Home(props) {
 
   
   const loadBooks = async () => {
-      const result = await axios.get("http://localhost:5000/api/v1/books")
+      const result = await axios.get("http://localhost:8080/api/v1/books")
       setBooks(result.data);
     };
 

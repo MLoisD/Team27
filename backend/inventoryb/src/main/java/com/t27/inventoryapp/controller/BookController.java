@@ -75,46 +75,46 @@ public class BookController {
     }
 
     // updates specific book
-    @PutMapping(value = "/updateBook/{bookID}")
-    public Book updateCustomer(@PathVariable Long bookID, @RequestBody Book newBook) {
-        return bookRepo.findById(bookID).map(
+    @PutMapping(value = "/updateBook/{id}")
+    public Book updateCustomer(@PathVariable Long id, @RequestBody Book newBook) {
+        return bookRepo.findById(id).map(
                 book -> {
                     book.setBName(newBook.getBName());
                     book.setAuthor(newBook.getAuthor());
-                    book.setyearPub(newBook.getyearPub());
+                    book.setDateput(newBook.getDateput());
                     book.setGenre(newBook.getGenre());
-                    book.setAgeRate(newBook.getAgeRate());
+                    book.setAgerate(newBook.getAgerate());
                     book.setCover(newBook.getCover());
                     book.setPrice(newBook.getPrice());
                     book.setDescription(newBook.getDescription());
                     return bookRepo.save(book);
-                }).orElseThrow(() -> new BookNotFoundException(bookID));
+                }).orElseThrow(() -> new BookNotFoundException(id));
 
     }
 
     // updates specific book stock level
-    @PutMapping(value = "/updateBookStock/{bookID}")
-    public String updateStockLvl(@PathVariable Long bookID, @RequestBody Book book) {
-        Book updatedB = bookRepo.findById(bookID).get();
-        updatedB.setStockNum(book.getStockNum());
+    @PutMapping(value = "/updateBookStock/{id}")
+    public String updateStockLvl(@PathVariable Long id, @RequestBody Book book) {
+        Book updatedB = bookRepo.findById(id).get();
+        updatedB.setStock(book.getStock());
         bookRepo.save(updatedB);
         return "Book Stock level has updated";
     }
 
     // deletes specified book
-    @DeleteMapping(value = "/deleteBook/{bookID}")
-    public String deleteBook(@PathVariable Long bookID) {
-        if (!bookRepo.existsById(bookID)) {
-            throw new BookNotFoundException(bookID);
+    @DeleteMapping(value = "/deleteBook/{id}")
+    public String deleteBook(@PathVariable Long id) {
+        if (!bookRepo.existsById(id)) {
+            throw new BookNotFoundException(id);
         }
-        Book deletedB = bookRepo.findById(bookID).get();
+        Book deletedB = bookRepo.findById(id).get();
         bookRepo.delete(deletedB);
-        return "Deleted Book, Book ID was: " + bookID;
+        return "Deleted Book, Book ID was: " + id;
     }
 
-    @GetMapping(value = "/bookList/{bookID}")
-    public Book getBookByID(@PathVariable Long bookID) {
-        return bookRepo.findById(bookID).orElseThrow(
-                () -> new BookNotFoundException(bookID));
+    @GetMapping(value = "/bookList/{id}")
+    public Book getBookByID(@PathVariable Long id) {
+        return bookRepo.findById(id).orElseThrow(
+                () -> new BookNotFoundException(id));
     }
 }

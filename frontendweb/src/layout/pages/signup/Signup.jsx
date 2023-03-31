@@ -26,7 +26,7 @@ const Signup = () => {
           localStorage.setItem("user", ref.current.email.value);
           localStorage.setItem("pass", ref.current.password.value);
           setTimeout(()=>{navigate("/")},250)
-        }
+        } 
       })
       .catch((err) => {
         setErrorMsg(JSON.stringify(err.response.data).slice(1, -1));

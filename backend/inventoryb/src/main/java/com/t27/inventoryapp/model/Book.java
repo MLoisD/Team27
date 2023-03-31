@@ -9,48 +9,48 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "books")
+@Table(name = "book")
 public class Book {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long BookID;
+    private Long id;
 
-    @Column
+    @Column(name="BName")
     @NotNull
-    private String BName;
+    private String bname;
   
-    @Column
+    @Column(name="Author")
     @NotNull
-    private String Author;
+    private String author;
 
-    @Column
+    @Column(name="DatePub")
     @NotNull
-    private int yearPub;
+    private int datepub;
 
-    @Column
+    @Column(name="Genre")
     @NotNull
-    private String Genre;
+    private String genre;
     
-    @Column
+    @Column(name="AgeRate")
     @NotNull
-    private int AgeRate;
+    private int agerate;
 
-    @Column
+    @Column(name="Cover")
     @NotNull
-    private String Cover;
+    private String cover;
     
-    @Column
+    @Column(name="Price")
     @NotNull
-    private float Price;
+    private float price;
 
-    @Column
+    @Column(name="Description")
     @NotNull
-    private String Description;
+    private String description;
 
-    @Column
+    @Column(name="stock")
     @NotNull
-    private int stockNum;
+    private int stock;
 
     private String category_id;
 
@@ -65,104 +65,104 @@ public class Book {
 
     public Book(){}
 
-    public Book(String BName, String Author, int yearPub, String Genre, int AgeRate, String Cover,float Price,String Description, int stockNum){
-        this.AgeRate = AgeRate;
-        this.Author = Author;
-        this.Description = Description;
-        this.yearPub = yearPub;
-        this.Genre = Genre;
-        this.Price = Price;
-        this.stockNum = stockNum;
-        this.BName = BName;
+    public Book(String bname, String author, int datepub, String genre, int agerate, String cover,float price,String description, int stock){
+        this.agerate = agerate;
+        this.author = author;
+        this.description = description;
+        this.datepub = datepub;
+        this.genre = genre;
+        this.price = price;
+        this.stock = stock;
+        this.bname = bname;
     }
 
  
-    public Long getBookID() {
-        return BookID;
+    public Long getId() {
+        return id;
     }
 
-    public void setBookID(Long BookID) {
-        this.BookID = BookID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getBName() {
-        return BName;
+        return bname;
     }
 
-    public void setBName(String BName) {
-        this.BName = BName;
+    public void setBName(String bname) {
+        this.bname = bname;
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
-    public void setAuthor(String Author) {
-        this.Author = Author;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
 
-    public int getyearPub() {
-        return yearPub;
+    public int getDateput() {
+        return datepub;
     }
 
-    public void setyearPub(int yearPub) {
-        this.yearPub = yearPub;
+    public void setDateput(int datepub) {
+        this.datepub = datepub;
     }
 
 
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
 
-    public void setGenre(String Genre) {
-        this.Genre = Genre;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
 
-    public int getAgeRate() {
-        return AgeRate;
+    public int getAgerate() {
+        return agerate;
     }
 
-    public void setAgeRate(int AgeRate) {
-        this.AgeRate = AgeRate;
+    public void setAgerate(int agerate) {
+        this.agerate = agerate;
     }
 
     public String getCover() {
-        return Cover;
+        return cover;
     }
 
 
-    public void setCover(String Cover) {
-        this.Cover = Cover;
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 
 
     public float getPrice() {
-        return Price;
+        return price;
     }
 
-    public void setPrice(float Price) {
-        this.Price = Price;
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
 
-    public void setDescription(String Description) {
-        this.Description = Description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getStockNum() {
-        return stockNum;
+    public int getStock() {
+        return stock;
     }
 
  
-    public void setStockNum(int stockNum) {
-        this.stockNum = stockNum;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
 }

@@ -81,7 +81,9 @@ function App() {
       <ShopContextProvider>
         {/* START haseena navbars */}
         {/* <Navigation />
-        <CategoryBar /> */}
+        <CategoryBar /> */}  
+
+        
          {/* END haseena navbars */}
         <Navbar />
         <Routes>
