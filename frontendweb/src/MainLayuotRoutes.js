@@ -19,10 +19,36 @@ import Logout from "./layout/pages/logout/Logout";
 import PrivateRoute from "./layout/pages/validate/PrivateRoute";
 import AdminPrivateRoute from "./layout/pages/validate/AdminPrivateRoute";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+import Navigation from "./components/commons/Navigation";
+import Books from "./components/books/Books";
+import Home from "./components/books/Home";
+import AddCustomers from "./components/customers/AddCustomer";
+import Customers from "./components/customers/Customers";
+import HeaderComponent from "./components/HeaderComponent";
+import { Shop } from "./pages/shopfront/shop";
+import MyImagesComponent from "./components/MyImagesComponent";
+import UploadImageComponent from "./components/UploadImageComponent";
+import { Basket } from "./components/basket/basket";
+import { ShopContextProvider } from "./context/shop-context";
+import CategoryBar from "./components/commons/CategoryBar";
+import ViewBooks from "./components/books/ViewBooks";
+import FileService from "./services/FileService";
+
+import { Horrorshop } from "./Horrorshop";
+import { Fictionshop } from "./Fictionshop";
+import { Romanceshop } from "./Romanceshop";
+import { Cart } from "./Cart";
+import CartI from "./CartI";
+import Payment from "./Payment";
+import { ProductDetail } from "./pages/shopfront/ProductDetail";
+
 export const LoggedAtom = atom(false);
 
 function App() {
- 
   // useEffect(() => {
   //   const user = localStorage.getItem("user");
   //   const pass = localStorage.getItem("pass");
@@ -50,8 +76,13 @@ function App() {
   // const [logged, setLogged] = useAtom(LoggedAtom);
 
   return (
-    <div className="App">
-      <React.Fragment/>
+    <div className="App container">
+      <React.Fragment />
+      <ShopContextProvider>
+        {/* START haseena navbars */}
+        {/* <Navigation />
+        <CategoryBar /> */}
+         {/* END haseena navbars */}
         <Navbar />
         <Routes>
           <Route exact path="/products" element={<ProductsAll />} />
@@ -64,9 +95,34 @@ function App() {
 
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/logout" element={<Logout />} />
-        </Routes>
-    <React.Fragment/>
 
+
+
+          {/* hassena paths */}
+          <Route path="/hassena" element={<Home />} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/Shop" element={<Shop />} />
+          <Route path="Shop/:id" element={<ProductDetail />} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/my-images" element={<MyImagesComponent />}></Route>
+          <Route path="/upload" element={<UploadImageComponent />}></Route>
+          <Route path="/basket" element={<PrivateRoute> <Cart /></PrivateRoute>} />
+          <Route exact path="/viewbook/:id" element={<ViewBooks />} />
+          <Route path="/horror" element={<Horrorshop />} />
+          <Route path="/romance" element={<Romanceshop />} />
+          <Route path="/fiction" element={<Fictionshop />} />
+          <Route path="/basket/:id" element={<Cart />} />
+          <Route path="/basket/:id/Payment" element={<Payment />} />
+          <Route path="/addToCart/:id" element={<Home />} />
+          <Route path="chatcart/:userId" element={<CartI />} />
+        </Routes>
+
+        
+        <React.Fragment />
+
+   
+      </ShopContextProvider>
     </div>
   );
 }
