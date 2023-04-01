@@ -33,12 +33,12 @@ export default function EditBook() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:8080/book/updateBook/${bookID}`, book)
+        await axios.put(`http://212.71.248.171:8080/book/updateBook/${bookID}`, book)
         navigate("/")
     };
 
     const loadBooks = async () => { 
-        const result = await axios.get(`http://localhost:8080/book/bookList/${bookID}`)
+        const result = await axios.get(`http://212.71.248.171:8080/book/bookList/${bookID}`)
         setBook(result.data)
     }
     return (

@@ -27,7 +27,7 @@ export default function AddBook() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/book/addBook", book)
+        await axios.post("http://212.71.248.171:8080/book/addBook", book)
         navigate("/admin")
     };
 

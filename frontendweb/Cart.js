@@ -30,7 +30,7 @@ useEffect(() => {
 }, []);
 
 const loadBooks= async () => {
-    const result = await axios.get(`http://localhost:5000/api/v1/books/${id}`);
+    const result = await axios.get(`http://212.71.248.171:8080/api/v1/books/${id}`);
     setBooks(result.data);
 };
 

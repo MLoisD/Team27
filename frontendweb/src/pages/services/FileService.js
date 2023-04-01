@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const BASE_URL = "http://localhost:8080/file"
+const BASE_URL = "http://212.71.248.171:8080/file"
 
 class FileService {
     getAllImages() {

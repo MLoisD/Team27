@@ -16,17 +16,17 @@ export default function InventoryHome() {
     }, []);
 
     const loadCustomers = async () => {
-        const result = await axios.get("http://localhost:8080/customerList")
+        const result = await axios.get("http://212.71.248.171:8080/customerList")
         setCustomers(result.data)
     }
 
     const loadBooks = async () => {
-        const result = await axios.get("http://localhost:8080/book/bookList")
+        const result = await axios.get("http://212.71.248.171:8080/book/bookList")
         setBooks(result.data)
     }
 
     const deleteBooks = async (bookID) => {
-        await axios.delete(`http://localhost:8080/book/bookList/${bookID}`)
+        await axios.delete(`http://212.71.248.171:8080/book/bookList/${bookID}`)
         loadBooks()
     }
 
