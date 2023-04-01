@@ -5,6 +5,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./basket.css";
 import Books from "./components/books/Books";
+import { Review } from "./Review";
 
 
 export default function Payment() {
@@ -50,7 +51,7 @@ const [book,setBooks] = useState({
 
 });
 
-const { id }= useParams();
+const { id, value }= useParams();
 
 useEffect(() => {
   loadBooks();
@@ -191,7 +192,8 @@ return (
               </div>
           </div>
         
-          <button type="submit" className="btn"> Submit </button>
+          <Link type="button" className="btn btn-outline-danger mx-3" to={`/basket/${book.id}/${value}/review`}>Submit </Link>
+          
 
                 <Link type="button" className="btn btn-outline-danger mx-3" to={`/basket/${book.id}`}>Cancel </Link>
       </form>

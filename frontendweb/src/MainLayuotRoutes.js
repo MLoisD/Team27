@@ -41,10 +41,14 @@ import FileService from "./services/FileService";
 import { Horrorshop } from "./Horrorshop";
 import { Fictionshop } from "./Fictionshop";
 import { Romanceshop } from "./Romanceshop";
+
 import { Cart } from "./Cart";
 import CartI from "./CartI";
 import Payment from "./Payment";
 import { ProductDetail } from "./pages/shopfront/ProductDetail";
+import { TeensShop } from "./Teensshop";
+import { Popularshop } from "./Popularshop";
+import { Review } from "./Review";
 
 export const LoggedAtom = atom(false);
 
@@ -113,11 +117,15 @@ function App() {
           <Route exact path="/viewbook/:id" element={<ViewBooks />} />
           <Route path="/horror" element={<Horrorshop />} />
           <Route path="/romance" element={<Romanceshop />} />
+          <Route path="/teens" element={<TeensShop />} />
+          <Route path="/popular" element={<Popularshop />} />
           <Route path="/fiction" element={<Fictionshop />} />
           <Route path="/basket/:id" element={<Cart />} />
           <Route path="/basket/:id/Payment" element={<Payment />} />
           <Route path="/addToCart/:id" element={<Home />} />
           <Route path="chatcart/:userId" element={<CartI />} />
+          <Route path="/basket/:id/:value/review" element ={<Review />} />
+          <Route path="/basket/:id/:value/Payment" element = {<Payment />} />
         </Routes>
 
         

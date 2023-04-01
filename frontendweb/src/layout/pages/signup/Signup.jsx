@@ -41,6 +41,9 @@ const Signup = () => {
         <input type="text" name="userName" placeholder="Username" required />
         <label>Email</label>
         <input type="text" name="email" placeholder="Email" required />
+        <br>
+        </br>
+        <br></br>
         <label>Password</label>
         <input
           type="password"
@@ -49,7 +52,9 @@ const Signup = () => {
           required
           minLength={8}
         />
+        <div>
         <button type="submit">Submit</button>
+        </div>
       </form>
       {errorMsg ? <h1 style={{ color: "red" }}>{errorMsg}</h1> : null}
     </div>

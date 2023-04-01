@@ -7,14 +7,28 @@ import "./book.css";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Link } from "react-router-dom";
 
 export const Horrorshop = () => {
     const [search, setSearch] = useState('')
   return (
     <div className="shop">
+      <h1>Horror</h1>
       <div className="shopTitle">
-        <h1>Bookworms</h1>
+        
+        <div>
+            <div className="nav2">
+                <div className='container-fluid'>
+                    <Link className="logo" to="/home">All books</Link>
+                    <Link className='btn btn-outline-light' to="/Horror">Horror</Link>
+                    <Link className='btn btn-outline-light' to="/fiction">Fiction</Link>
+                    <Link className='btn btn-outline-light' to="/romance">Romance</Link>
+                    <Link className='btn btn-outline-light' to="/teens">Teens</Link>
+                    <Link className='btn btn-outline-light' to="/popular">Popular</Link>
+                    
+                </div>
+            </div>
+        </div>
       </div>
       <Form>
         <InputGroup className='my-3'>

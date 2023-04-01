@@ -72,7 +72,7 @@ const Sidebar = () => {
             <span>PROFILE</span>
           </li>
           </Link>
-          <Link to="/" style={{ textDecoration: "none", color: "grey" }}>
+          <Link to="/http://localhost:3000/home" style={{ textDecoration: "none", color: "grey" }}>
           <li>
             <LogoutRoundedIcon className="icon"/>
             <span>LOGOUT</span>

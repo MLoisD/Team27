@@ -10,6 +10,7 @@ export const Cart = () => {
   const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
 
+
   
 const [book,setBooks] = useState({
     bname:"",
@@ -58,7 +59,7 @@ const getInitialState = () => {
         <h1>Your Cart Items</h1>
       </div>
       <div className="container">
-      <Link className="btn" id="next" to={`/basket/${book.id}/Payment`}>next </Link>
+      <Link className="btn" id="next" to={`/basket/${book.id}/${value}/Payment`}>next </Link>
             <div className="progress-container">
             <div className="progress" id="progress"></div>
             <div className="circle active">Cart</div>
@@ -83,7 +84,7 @@ const getInitialState = () => {
         <p> Price: £{book.price}</p>
 
       <div className="column quantity">
-        <label for="quantity">Quantity:</label>
+        <label htmlFor="quantity">Quantity:</label>
           <select value={value} onChange={handleChange} name="quantity" id="quantity">
           <option value="0">0</option>
           <option value="1">1</option>
@@ -103,7 +104,7 @@ const getInitialState = () => {
 
 
         <div className="leftcolumn">
-         <Link type="button" className="checkout-button" to={`/basket/${book.id}/Payment`}> Checkout</Link>
+         <Link type="button" className="checkout-button" to={`/basket/${book.id}/${value}/Payment`}> Checkout</Link>
 
    </div>
          

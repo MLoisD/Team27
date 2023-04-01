@@ -49,7 +49,10 @@ const Login = () => {
           required
           minLength={8}
         />
+        <div>
         <button type="submit">Submit</button>
+        </div>
+        
       </form>
       {errorMsg ? <h1 style={{ color: "red" }}>{errorMsg}</h1> : null}
     </div>

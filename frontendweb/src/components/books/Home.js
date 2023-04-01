@@ -33,7 +33,19 @@ export default function Home(props) {
    
     <section className="product_list">
       <h2>BookWorms</h2>
-
+      <div>
+            <div className="nav2">
+                <div className='container-fluid'>
+                    <Link className="logo" to="/home">All books</Link>
+                    <Link className='btn btn-outline-light' to="/Horror">Horror</Link>
+                    <Link className='btn btn-outline-light' to="/fiction">Fiction</Link>
+                    <Link className='btn btn-outline-light' to="/romance">Romance</Link>
+                    <Link className='btn btn-outline-light' to="/teens">Teens</Link>
+                    <Link className='btn btn-outline-light' to="/popular">Popular</Link>
+                    
+                </div>
+            </div>
+        </div>
     <div className="product_container" id="product_container">
 
   

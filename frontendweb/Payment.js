@@ -26,7 +26,7 @@ export default function Payment() {
   };
   const onSubmit= async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/v1/customers", customer)
+    await axios.post("/api/v1/customers", customer)
     navigate("/")
   }
 
@@ -58,7 +58,7 @@ useEffect(() => {
 }, []);
 
 const loadBooks= async () => {
-  const result = await axios.get(`http://localhost:5000/api/v1/books/${id}`);
+  const result = await axios.get(`/api/v1/books/${id}`);
   setBooks(result.data);
 };
 
@@ -178,7 +178,7 @@ return (
               <div className="payment-details">
                 <label htmlFor="cname">Name on Card</label>
                 <input type="text" id="cname" name="cardname" placeholder="John More Doe"></input>
-                <label htmlFor="ccnum">Credit card number</label>
+                <label htmlFor="ccnum"><h1>hello</h1></label>
                 <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"></input>
                 <label htmlFor="expmonth">Exp Month</label>
                 <input type="text" id="expmonth" name="expmonth" placeholder="September"></input>

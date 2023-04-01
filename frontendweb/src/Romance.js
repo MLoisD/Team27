@@ -4,8 +4,8 @@ import img23 from "./images/img23.jpg";
 import img24 from "./images/img24.jpg";
 import img25 from "./images/img25.jpg";
 import img28 from "./images/img28.jpg";
-
-
+import img44 from "./images/img44.jpg";
+import img45 from "./images/img45.jpg";
 
 
 
@@ -81,6 +81,30 @@ export const ROMANCE = [
         Genre: "fiction, fantasy, philosophy",
         price: 8.99,
         imageUri: img28,
+        stock: 25,
+    },
+    {
+        BookID: 9,
+        BName: "This time it's real",
+        Author: "Ann Liang",
+        AgeRate: "12",
+        DatePub: "2002-10-10",
+        Description: "One of Kafka's best selling novels and a seemignly bizarre masterpiece.It is the story of a young man who, transformed overnight into a giant beetle-like insect, becomes an object of disgrace to his family, an outsider in his own home, a quintessentially alienated man. A harrowing—though absurdly comic—meditation on human feelings of inadequacy, guilt, and isolation, The Metamorphosis has taken its place as one of the most widely read and influential works of twentieth-century fiction. ",
+        Genre: "fiction, fantasy, philosophy",
+        price: 8.99,
+        imageUri: img45,
+        stock: 25,
+    },
+    {
+        BookID: 10,
+        BName: "This time it's real",
+        Author: "Ann Liang",
+        AgeRate: "12",
+        DatePub: "2002-10-10",
+        Description: "One of Kafka's best selling novels and a seemignly bizarre masterpiece.It is the story of a young man who, transformed overnight into a giant beetle-like insect, becomes an object of disgrace to his family, an outsider in his own home, a quintessentially alienated man. A harrowing—though absurdly comic—meditation on human feelings of inadequacy, guilt, and isolation, The Metamorphosis has taken its place as one of the most widely read and influential works of twentieth-century fiction. ",
+        Genre: "fiction, fantasy, philosophy",
+        price: 8.99,
+        imageUri: img44,
         stock: 25,
     },
 

@@ -345,7 +345,8 @@ input[type=text], select{
   box-shadow: #000000;
   justify-content: center;
   align-items: center;
-  
+  background-color: rgb(221, 208, 208);
+  display: flex;
 }
 
 
