@@ -89,7 +89,7 @@ public class User {
         this.role = NewRole.USER;
     }
 
-    public User(){}
+    //public User(){}
  
     public Long getId() {
         return id;
