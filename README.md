@@ -27,6 +27,8 @@ To run the Java code seperately:
 Step 1: Find the application file (backend\inventoryb\src\main\java\com\t27\inventoryapp\InventorybApplication.java)
 
 Step 2: Right click when on the file and select 'Run Java' from the drop down menu
+
+
 ------------------------------------------------------------------------------------------------------
 
 Login information:
