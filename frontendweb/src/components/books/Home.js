@@ -57,6 +57,10 @@ export default function Home(props) {
     <div className="title"><b>{book.bname}</b>
     <div className="author_name"><b>{book.author}</b>
     <div className="price"><b>£{book.price}</b>
+    <br></br>
+    {book.stock > 10 ? ( 
+    <small>{book.stock + " Available"}</small> 
+    ): ( <small className="has-text-danger">Low in stock</small>) }
     </div>
     <Link className="btn btn-primary my-1" to={`/viewbook/${book.id}`}>View details </Link>
     {/* <Link className="btn btn-default cart" to={`/addToCart/${book.id}`}>Add to cart </Link>  */}
