@@ -43,7 +43,7 @@ const Booktable = () => {
     <div className="booktable">
       <div className="booktableTitle">
         BOOKS
-        <Link to="/new" className="link">
+        <Link to="new" className="link">
           Add New
         </Link>
       </div>
