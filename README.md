@@ -14,7 +14,7 @@ step 3: Open the project. Ensure you are in the frontendweb directory. You can c
 
 cd ./frontendweb
 
-step 4: run this command, it installs npm correctly for this document
+step 4: run this command, it installs npm correctly for this document - this process may take several minutes
 
 npm install --legacy-peer-deps
 
