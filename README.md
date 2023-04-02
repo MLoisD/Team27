@@ -1,5 +1,24 @@
 # Team27
-Repo for Team 27 (TP)
+Repo for Team 27 (TP). In this repository, the code for the ecommerce website 'Bookworms' is available. Both the frontend and backend are in seperate folders.
+
+MOSINMILOLUWA DAVIDS (Lois)- 210026407 
+
+SIJAN HOSSAIN - 210049864 
+
+QASIM ILYAS - 200078111 
+
+HASEENA IQBAL - 210082012 
+
+HAFSA MAMOON - 210132214 
+
+BHAVAN MATTU - 200073574 
+
+MANDLENKOSI MITHI (Bernard) - 210093454 
+
+ABDULLAHI OSMAN - 200162203 
+
+------------------------------------------------------------------------------------------------------
+
 
 Step 1 : First Install npm and node onto your computer. The Link can be found here:
 
