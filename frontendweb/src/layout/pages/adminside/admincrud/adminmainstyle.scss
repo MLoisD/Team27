@@ -1,0 +1,21 @@
+.maindiv{
+    background-image: linear-gradient(43deg, #CCFCCB 0%, #F1FFFA 46%, #F5F5F5 100%) ;
+    font-family: "Chakra Petch";
+    margin: 0;
+    padding: 0;
+}
+.section{
+    width: 100%;
+    min-height: 100vh;
+}
+.container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+.content-section{
+    float: left;
+    width: 55%;
+}
+
