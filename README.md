@@ -1,6 +1,8 @@
 # Team27
 Repo for Team 27 (TP). In this repository, the code for the ecommerce website 'Bookworms' is available. Both the frontend and backend are in seperate folders.
 
+Note - The databases and backend of this project is hosted online using Lenode. But you will still have to run a local version of the frontend to use the project. instructions on how to do this can be found below.
+
 MOSINMILOLUWA DAVIDS (Lois)- 210026407 
 
 SIJAN HOSSAIN - 210049864 
