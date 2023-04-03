@@ -16,6 +16,9 @@ BHAVAN MATTU - 200073574
 MANDLENKOSI MITHI (Bernard) - 210093454 
 
 ABDULLAHI OSMAN - 200162203 
+------------------------------------------------------------------------------------------------------
+
+Note - The databases and backend of this project is hosted online using Lenode. But you will still have to run a local version of the frontend to use the project. instructions on how to do this can be found below.
 
 ------------------------------------------------------------------------------------------------------
 
